@@ -1,0 +1,318 @@
+2019-01-29 20:46:10,263 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 38, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 250, in run_test
+    runner.run(testcase_dir_path, http_client_session=session)
+  File "D:\project\HttpRunnerManager\ApiManager\utils\runner.py", line 111, in run
+    result = self.runner.run(test_suite)
+  File "d:\software\python\Lib\unittest\runner.py", line 176, in run
+    test(result)
+  File "d:\software\python\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "d:\software\python\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "d:\software\python\Lib\unittest\case.py", line 663, in __call__
+    return self.run(*args, **kwds)
+  File "d:\software\python\Lib\unittest\case.py", line 623, in run
+    self._feedErrorsToResult(result, outcome.errors)
+  File "d:\software\python\Lib\unittest\case.py", line 553, in _feedErrorsToResult
+    result.addError(test, exc_info)
+  File "D:\envs\django\lib\site-packages\httprunner\report.py", line 181, in addError
+    self._record_test(test, 'error', self._exc_info_to_string(err, test))
+  File "D:\envs\django\lib\site-packages\httprunner\report.py", line 160, in _record_test
+    "meta_data": test.meta_data
+AttributeError: 'TestCase' object has no attribute 'meta_data'
+2019-01-29 20:52:37,929 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 38, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 253, in run_test
+    runner.run(testcase_dir_path, http_client_session=session)
+  File "D:\project\HttpRunnerManager\ApiManager\utils\runner.py", line 111, in run
+    result = self.runner.run(test_suite)
+  File "d:\software\python\Lib\unittest\runner.py", line 176, in run
+    test(result)
+  File "d:\software\python\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "d:\software\python\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "d:\software\python\Lib\unittest\case.py", line 663, in __call__
+    return self.run(*args, **kwds)
+  File "d:\software\python\Lib\unittest\case.py", line 623, in run
+    self._feedErrorsToResult(result, outcome.errors)
+  File "d:\software\python\Lib\unittest\case.py", line 553, in _feedErrorsToResult
+    result.addError(test, exc_info)
+  File "D:\envs\django\lib\site-packages\httprunner\report.py", line 178, in addError
+    self._record_test(test, 'error', self._exc_info_to_string(err, test))
+  File "D:\envs\django\lib\site-packages\httprunner\report.py", line 160, in _record_test
+    "meta_data": test.Meta_data
+AttributeError: 'TestCase' object has no attribute 'Meta_data'
+2019-01-29 20:53:07,390 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 38, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 253, in run_test
+    runner.run(testcase_dir_path, http_client_session=session)
+  File "D:\project\HttpRunnerManager\ApiManager\utils\runner.py", line 111, in run
+    result = self.runner.run(test_suite)
+  File "d:\software\python\Lib\unittest\runner.py", line 176, in run
+    test(result)
+  File "d:\software\python\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "d:\software\python\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "d:\software\python\Lib\unittest\case.py", line 663, in __call__
+    return self.run(*args, **kwds)
+  File "d:\software\python\Lib\unittest\case.py", line 623, in run
+    self._feedErrorsToResult(result, outcome.errors)
+  File "d:\software\python\Lib\unittest\case.py", line 553, in _feedErrorsToResult
+    result.addError(test, exc_info)
+  File "D:\envs\django\lib\site-packages\httprunner\report.py", line 178, in addError
+    self._record_test(test, 'error', self._exc_info_to_string(err, test))
+  File "D:\envs\django\lib\site-packages\httprunner\report.py", line 160, in _record_test
+    "meta_data": test.meta_data
+AttributeError: 'TestCase' object has no attribute 'meta_data'
+2019-01-29 21:17:14,808 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 38, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 251, in run_test
+    run_test_by_type(id_num, base_url, testcase_dir_path, types)
+  File "D:\project\HttpRunnerManager\ApiManager\utils\runner.py", line 429, in run_test_by_type
+    run_by_single(id, base_url, path)
+NameError: name 'run_by_single' is not defined
+2019-01-29 21:38:34,358 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/add_case/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 17, in <module>
+    from ApiManager.tasks import main_hrun
+  File "D:\project\HttpRunnerManager\ApiManager\tasks.py", line 14, in <module>
+    from ApiManager.utils.runner import run_by_project, run_by_module, run_by_suite, MyRunner
+  File "D:\project\HttpRunnerManager\ApiManager\utils\runner.py", line 132, in <module>
+    class MyRunner(Runner):
+  File "D:\project\HttpRunnerManager\ApiManager\utils\runner.py", line 134, in MyRunner
+    def __init__(self, config_dict=None, http_client_session=SocketSession()):
+TypeError: __init__() missing 1 required positional argument: 'base_url'
+2019-01-29 21:38:45,841 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 17, in <module>
+    from ApiManager.tasks import main_hrun
+  File "D:\project\HttpRunnerManager\ApiManager\tasks.py", line 14, in <module>
+    from ApiManager.utils.runner import run_by_project, run_by_module, run_by_suite, MyRunner
+  File "D:\project\HttpRunnerManager\ApiManager\utils\runner.py", line 132, in <module>
+    class MyRunner(Runner):
+  File "D:\project\HttpRunnerManager\ApiManager\utils\runner.py", line 134, in MyRunner
+    def __init__(self, config_dict=None, http_client_session=SocketSession()):
+TypeError: __init__() missing 1 required positional argument: 'base_url'
+2019-01-29 21:50:16,444 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- socket_test用例更新成功: {'test': {'request': {'url': '2038983919', 'method': 'PRIMUS', 'data': {'cmd': 'getUserInfo', 'params': '{"userId":2038983919}'}}, 'name': 'socket_test', 'validate': [{'comparator': 'equals', 'check': 'content.res.data.userId', 'expected': 2038983919}]}}
+2019-01-29 22:02:06,233 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- dsdfsd用例更新成功: {'test': {'request': {'url': 'http://www.baidu.com', 'method': 'GET'}, 'name': 'dsdfsd', 'extract': [{'myname': 'content.cmd.data'}]}}
+2019-01-29 22:12:43,476 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- df用例更新成功: {'test': {'request': {'url': '2038983921', 'method': 'PRIMUS', 'data': {'cmd': 'getUserInfo', 'params': '{"userId":2038983921}'}}, 'name': 'df', 'validate': [{'comparator': 'equals', 'check': 'content.res.data.code', 'expected': '200'}], 'extract': [{'hello': ''}]}}
+2019-01-29 22:36:59,223 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_batch_test/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 38, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 290, in run_batch_test
+    session = switch_session(method, base_url)
+UnboundLocalError: local variable 'method' referenced before assignment
+2019-01-30 10:04:56,208 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/test_list/1/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 17, in <module>
+    from ApiManager.tasks import main_hrun
+  File "D:\project\HttpRunnerManager\ApiManager\tasks.py", line 14, in <module>
+    from ApiManager.utils.runner import run_by_project, run_by_module, run_by_suite, MyRunner
+ImportError: cannot import name 'MyRunner' from 'ApiManager.utils.runner' (D:\project\HttpRunnerManager\ApiManager\utils\runner.py)
+2019-01-30 10:05:19,283 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/module_list/1/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 17, in <module>
+    from ApiManager.tasks import main_hrun
+  File "D:\project\HttpRunnerManager\ApiManager\tasks.py", line 14, in <module>
+    from ApiManager.utils.runner import run_by_project, run_by_module, run_by_suite, MyRunner
+ImportError: cannot import name 'MyRunner' from 'ApiManager.utils.runner' (D:\project\HttpRunnerManager\ApiManager\utils\runner.py)
+2019-01-30 10:05:20,109 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/project_list/1/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 17, in <module>
+    from ApiManager.tasks import main_hrun
+  File "D:\project\HttpRunnerManager\ApiManager\tasks.py", line 14, in <module>
+    from ApiManager.utils.runner import run_by_project, run_by_module, run_by_suite, MyRunner
+ImportError: cannot import name 'MyRunner' from 'ApiManager.utils.runner' (D:\project\HttpRunnerManager\ApiManager\utils\runner.py)
+2019-01-30 10:06:28,604 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/module_list/1/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 17, in <module>
+    from ApiManager.tasks import main_hrun
+  File "D:\project\HttpRunnerManager\ApiManager\tasks.py", line 14, in <module>
+    from ApiManager.utils.runner import run_by_project, run_by_module, run_by_suite, MyRunner
+ImportError: cannot import name 'MyRunner' from 'ApiManager.utils.runner' (D:\project\HttpRunnerManager\ApiManager\utils\runner.py)
+2019-01-30 10:07:08,696 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/login/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 17, in <module>
+    from ApiManager.tasks import main_hrun
+  File "D:\project\HttpRunnerManager\ApiManager\tasks.py", line 14, in <module>
+    from ApiManager.utils.runner import run_by_project, run_by_module, run_by_suite, MyRunner
+ImportError: cannot import name 'MyRunner' from 'ApiManager.utils.runner' (D:\project\HttpRunnerManager\ApiManager\utils\runner.py)
+2019-01-30 10:08:01,064 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/login/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 17, in <module>
+    from ApiManager.tasks import main_hrun
+  File "D:\project\HttpRunnerManager\ApiManager\tasks.py", line 14, in <module>
+    from ApiManager.utils.runner import run_by_project, run_by_module, run_by_suite, MyRunner
+ImportError: cannot import name 'MyRunner' from 'ApiManager.utils.runner' (D:\project\HttpRunnerManager\ApiManager\utils\runner.py)
+2019-01-30 10:09:41,177 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-01-30 10:49:16,184 [HttpRunnerManager:192] [operation:add_config_data] [INFO]- 技能配置1配置添加成功: {'config': {'request': {}, 'name': '技能配置1', 'variables': [{'haha': '2'}]}}
+2019-01-30 10:49:41,265 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- socket_test用例更新成功: {'test': {'request': {'url': '2038983919', 'method': 'PRIMUS', 'data': {'cmd': 'getUserInfo', 'params': '{"userId":2038983919}'}}, 'name': 'socket_test', 'validate': [{'comparator': 'equals', 'check': 'content.res.data.userId', 'expected': 2038983919}]}}
+2019-01-30 10:53:43,733 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- socket_test用例更新成功: {'test': {'request': {'url': '2038983919', 'method': 'PRIMUS', 'data': {'cmd': 'getUserInfo', 'params': '{"userId":2038983919}'}, 'headers': {'hh': '2'}}, 'name': 'socket_test', 'validate': [{'comparator': 'equals', 'check': 'content.res.data.userId', 'expected': 2038983919}]}}
+2019-01-30 10:59:47,026 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- socket_test用例更新成功: {'test': {'request': {'url': '2038983919', 'method': 'PRIMUS', 'data': {'cmd': 'getUserInfo'}, 'headers': {'userId': '22038983919'}}, 'name': 'socket_test', 'validate': [{'comparator': 'equals', 'check': 'content.res.data.userId', 'expected': 2038983919}]}}
+2019-01-30 11:12:21,001 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- socket_test用例更新成功: {'test': {'request': {'url': '2038983919', 'method': 'PRIMUS', 'data': {'cmd': 'getUserInfo', 'params': '{"userId":2038983921}'}}, 'name': 'socket_test', 'validate': [{'comparator': 'equals', 'check': 'content.res.data.userId', 'expected': 2038983919}]}}
+2019-01-30 11:16:08,105 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- socket_test用例更新成功: {'test': {'request': {'url': '2038983919', 'method': 'PRIMUS', 'data': {'cmd': 'getUserInfo', 'params': '{"userId":2038983921}'}}, 'name': 'socket_test', 'validate': [{'comparator': 'equals', 'check': 'content.res.data.userId', 'expected': 2038983921}]}}
+2019-01-30 11:35:03,423 [HttpRunnerManager:201] [operation:add_config_data] [INFO]- 公共UserId配置更新成功: {'config': {'request': {'data': {'cmd': 'getUserInfo'}}, 'name': '公共UserId', 'variables': [{'userId': '2038983921'}]}}
+2019-01-30 11:35:25,974 [HttpRunnerManager:201] [operation:add_config_data] [INFO]- 泡泡龙技能公共配置配置更新成功: {'config': {'request': {'data': {'cmd': 'getUserInfo'}}, 'name': '泡泡龙技能公共配置', 'variables': [{'userId': '2038983921'}]}}
+2019-01-30 11:36:56,394 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- getUserInfo用例添加成功: {'test': {'request': {'url': '$userId', 'method': 'PRIMUS', 'data': {'params': '{"getUserInfo":$userId}'}}, 'name': 'getUserInfo', 'validate': [{'comparator': 'equals', 'check': 'content.res.data.code', 'expected': '200'}]}}
+2019-01-30 11:37:34,942 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- getUserInfo用例更新成功: {'test': {'request': {'url': '$userId', 'method': 'PRIMUS', 'data': {'params': '{"userId":$userId}'}}, 'name': 'getUserInfo', 'validate': [{'comparator': 'equals', 'check': 'content.res.data.code', 'expected': '200'}]}}
+2019-01-30 11:44:09,411 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- getUserInfo用例更新成功: {'test': {'request': {'url': '$userId', 'method': 'PRIMUS', 'data': {'params': '{"userId":$userId}'}}, 'name': 'getUserInfo', 'validate': [{'comparator': 'equals', 'check': 'content.code', 'expected': '200'}]}}
+2019-01-30 11:44:32,408 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- getUserInfo用例更新成功: {'test': {'request': {'url': '$userId', 'method': 'PRIMUS', 'data': {'params': '{"userId":$userId}'}}, 'name': 'getUserInfo', 'validate': [{'comparator': 'equals', 'check': 'content.code', 'expected': 200}]}}
+2019-01-30 11:49:18,159 [HttpRunnerManager:201] [operation:add_config_data] [INFO]- 泡泡龙技能公共配置配置更新成功: {'config': {'request': {}, 'name': '泡泡龙技能公共配置', 'variables': [{'userId': '2038983921'}]}}
+2019-01-30 11:49:37,053 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- getUserInfo用例更新成功: {'test': {'request': {'url': '$userId', 'method': 'PRIMUS', 'data': {'params': '{"userId":$userId}', 'cmd': 'getUserInfo'}}, 'name': 'getUserInfo', 'validate': [{'comparator': 'equals', 'check': 'content.code', 'expected': 200}]}}
+2019-01-30 11:55:55,821 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- userAmount用例添加成功: {'test': {'request': {'url': '$userId', 'method': 'PRIMUS', 'data': {'cmd': 'userAmount', 'params': '{}'}}, 'name': 'userAmount', 'validate': [{'comparator': 'equals', 'check': 'content.code', 'expected': 200}]}}
+2019-01-30 12:04:47,795 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- userAmount用例更新成功: {'test': {'request': {'url': '$userId', 'method': 'PRIMUS', 'data': {'cmd': 'userAmount', 'params': '{"userId":$userId}'}}, 'name': 'userAmount', 'validate': [{'comparator': 'equals', 'check': 'content.code', 'expected': 200}]}}
+2019-01-30 12:14:14,477 [HttpRunnerManager:619] [common:update_include] [WARNING]- 依赖的 test：oo 用例/配置已经被删除啦！！
+2019-01-30 12:14:14,479 [HttpRunnerManager:619] [common:update_include] [WARNING]- 依赖的 test：df 用例/配置已经被删除啦！！
+2019-01-30 12:14:14,481 [HttpRunnerManager:619] [common:update_include] [WARNING]- 依赖的 test：dsdfsd 用例/配置已经被删除啦！！
+2019-01-30 12:16:49,260 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_batch_test/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 38, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 291, in run_batch_test
+    session = switch_session(method, base_url)
+UnboundLocalError: local variable 'method' referenced before assignment
+2019-01-30 12:38:35,025 [HttpRunnerManager:103] [views:log_out] [INFO]- huangmin退出
+2019-01-30 12:40:05,423 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-01-30 13:22:26,796 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/debugtalk_list/1/
+Traceback (most recent call last):
+  File "D:\envs\django\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\envs\django\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project\HttpRunnerManager\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+  File "D:\project\HttpRunnerManager\ApiManager\views.py", line 17, in <module>
+    from ApiManager.tasks import main_hrun
+  File "D:\project\HttpRunnerManager\ApiManager\tasks.py", line 11, in <module>
+    from ApiManager.utils.common import timestamp_to_datetime
+  File "D:\project\HttpRunnerManager\ApiManager\utils\common.py", line 661
+    def
+       ^
+SyntaxError: invalid syntax
+2019-01-30 13:46:25,935 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- test_debugtalk用例添加成功: {'test': {'request': {'url': '$userId', 'method': 'PRIMUS', 'data': {'cmd': 'getUserInfo', 'params': '{"userId":1}'}}, 'name': 'test_debugtalk', 'validate': [{'comparator': 'equals', 'check': '$data', 'expected': 1}], 'variables': [{'where': '{"id":1}'}, {'values': '["id"]'}, {'data': "${D(table='EnvInfo',where=$where,values=$values)}"}]}}
