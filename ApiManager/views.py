@@ -17,7 +17,7 @@ from ApiManager.models import ProjectInfo, ModuleInfo, TestCaseInfo, UserInfo, E
 from ApiManager.tasks import main_hrun
 from ApiManager.utils.common import module_info_logic, project_info_logic, case_info_logic, config_info_logic, \
     set_filter_session, get_ajax_msg, register_info_logic, task_logic, load_modules, upload_file_logic, \
-    init_filter_session, get_total_values, timestamp_to_datetime
+    init_filter_session, get_total_values, timestamp_to_datetime, default_db
 from ApiManager.utils.operation import env_data_logic, del_module_data, del_project_data, del_test_data, copy_test_data, \
     del_report_data, add_suite_data, copy_suite_data, del_suite_data, edit_suite_data, add_test_reports
 from ApiManager.utils.pagination import get_pager_info
@@ -238,6 +238,7 @@ def run_test(request):
         types = kwargs.pop('type')
         run_test_by_type(id_num, base_url, testcase_dir_path, types)
         report_name = kwargs.get('report_name', None)
+        print("yibu:###")
         main_hrun.delay(testcase_dir_path, report_name)
         return HttpResponse('用例执行中，请稍后查看报告即可,默认时间戳命名报告')
     else:
@@ -704,6 +705,8 @@ def debugtalk(request, id=None):
         id = request.POST.get('id')
         debugtalk = request.POST.get('debugtalk')
         code = debugtalk.replace('new_line', '\r\n')
+        code = default_db(code)
+        print("code:###",code)
         obj = DebugTalk.objects.get(id=id)
         obj.debugtalk = code
         obj.save()

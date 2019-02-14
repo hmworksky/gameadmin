@@ -316,3 +316,4 @@ Traceback (most recent call last):
        ^
 SyntaxError: invalid syntax
 2019-01-30 13:46:25,935 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- test_debugtalk用例添加成功: {'test': {'request': {'url': '$userId', 'method': 'PRIMUS', 'data': {'cmd': 'getUserInfo', 'params': '{"userId":1}'}}, 'name': 'test_debugtalk', 'validate': [{'comparator': 'equals', 'check': '$data', 'expected': 1}], 'variables': [{'where': '{"id":1}'}, {'values': '["id"]'}, {'data': "${D(table='EnvInfo',where=$where,values=$values)}"}]}}
+2019-02-01 12:16:22,607 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功

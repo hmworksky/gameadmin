@@ -19,6 +19,7 @@ from httprunner import logger
 
 @shared_task
 def main_hrun(testset_path, report_name):
+    print("执行异步函数")
     """
     用例运行
     :param testset_path: dict or list
@@ -26,13 +27,16 @@ def main_hrun(testset_path, report_name):
     :return:
     """
     logger.setup_logger('INFO')
-    runner = NewRunner()
+    kwargs = {
+        "failfast": False,
+    }
+    runner = NewRunner(**kwargs)
     runner.run(testset_path)
     shutil.rmtree(testset_path)
 
     runner.summary = timestamp_to_datetime(runner.summary)
     report_path = add_test_reports(runner, report_name=report_name)
-    os.remove(report_path)
+    #os.remove(report_path)
 
 
 @shared_task
@@ -44,7 +48,10 @@ def project_hrun(name, base_url, project, receiver):
     :return:
     """
     logger.setup_logger('INFO')
-    runner = NewRunner()
+    kwargs = {
+        "failfast": False,
+    }
+    runner = NewRunner(**kwargs)
     id = ProjectInfo.objects.get(project_name=project).id
 
     testcase_dir_path = os.path.join(os.getcwd(), "suite")
@@ -73,7 +80,10 @@ def module_hrun(name, base_url, module, receiver):
     :return:
     """
     logger.setup_logger('INFO')
-    runner = NewRunner()
+    kwargs = {
+        "failfast": False,
+    }
+    runner = NewRunner(**kwargs)
     module = list(module)
 
     testcase_dir_path = os.path.join(os.getcwd(), "suite")
@@ -106,7 +116,10 @@ def suite_hrun(name, base_url, suite, receiver):
     :return:
     """
     logger.setup_logger('INFO')
-    runner = NewRunner()
+    kwargs = {
+        "failfast": False,
+    }
+    runner = NewRunner(**kwargs)
     suite = list(suite)
 
     testcase_dir_path = os.path.join(os.getcwd(), "suite")

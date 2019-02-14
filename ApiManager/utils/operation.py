@@ -431,6 +431,7 @@ def copy_suite_data(id, name):
 
 
 def add_test_reports(runner, report_name=None):
+    print("添加报告：###")
     """
     定时任务或者异步执行报告信息落地
     :param start_at: time: 开始时间

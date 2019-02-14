@@ -662,6 +662,11 @@ def get_model(table=None, appname="ApiManager"):
 #     r =
 
 
+
+
+
+
+
 class DB:
 
     def __init__(self, table, app):
@@ -696,12 +701,14 @@ class DB:
         return model_to_dict(data)
 
     @classmethod
-    def sql(cls, connects, sql):
+    def sql(cls, app, sql):
         if not sql.startswith("select"):
             return {}
         else:
             from pymysql import connect
+            from HttpRunnerManager.settings import DATABASES
             try:
+                connects = DATABASES.get(app, "default")
                 conn = connect(**connects)
                 cursor = conn.cursor()
                 cursor.execute(sql)
@@ -711,6 +718,38 @@ class DB:
                 return {}
 
 
+def default_db(code):
+
+    data = """
+from ApiManager.utils.common import DB			
+def insert(table, values, app = "bubble"):
+    db = DB(table, app)
+    result = db.insert(values)
+    return result 
+
+def update(table, where, values, app = "bubble"):
+    db = DB(table, app)
+    result = db.update(where, values)
+    return result 
+
+def count(table, where, app = "bubble"):
+    db = DB(table, app)
+    result = db.count(where)
+    return result
+
+def select(where, values, app = "bubble", limit=50, order_by_data=None, group_by_data=None, is_desc=True):
+    db = DB(table, app)
+    result = db.select(where, values, limit=50, order_by_data=None, group_by_data=None, is_desc=True)
+    return result
+
+def sql(sql, app = "bubble"):
+    result = DB.sql(app,sql)
+    return result
+"""
+    inner = data.split("\n")[1]
+    if inner not in code:
+        code = data +'\n'+ code
+    return code
 
 
 
