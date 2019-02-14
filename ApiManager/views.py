@@ -252,7 +252,7 @@ def run_test(request):
         session = switch_session(method, base_url)
         run_test_by_type(id_num, base_url, testcase_dir_path, types)
         runner.run(testcase_dir_path, http_client_session=session)
-        # shutil.rmtree(testcase_dir_path)
+        shutil.rmtree(testcase_dir_path)
         runner.summary = timestamp_to_datetime(runner.summary, type=False)
 
         return render_to_response('report_template.html', runner.summary)
