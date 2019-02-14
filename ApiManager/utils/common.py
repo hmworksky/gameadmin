@@ -717,6 +717,12 @@ class DB:
                 return {}
 
 
+def format_redis_key(key):
+    if isinstance(key, tuple):
+        key = ":".join(tuple(map(str, key)))
+    return key
+
+
 class MyRedis:
     import sys
     from ApiManager.utils import config
@@ -727,6 +733,7 @@ class MyRedis:
     @classmethod
     def set(cls, key, value, exprise=7*24*3600):
         try:
+            key = format_redis_key(key)
             cls.rd.set(key, value, ex=exprise)
         except:
             return False
@@ -735,12 +742,14 @@ class MyRedis:
     @classmethod
     def get(cls, key):
         try:
+            key = format_redis_key(key)
             return cls.rd.get(key)
         except:
             return False
 
     @classmethod
     def delete(cls, key):
+        key = format_redis_key(key)
         if '*' in key:
             keys = cls.rd.keys(key)
             for i in keys:
@@ -788,32 +797,20 @@ def sql(sql, app = "bubble"):
     result = DB.sql(app,sql)
     return result
     
-def rget(*args):
+def rget(*key):
     # 从缓存获取数据，传递key
     # 使用方法: ${rget(key名字)}
-    args = list(map(str,args))
-    key = args
-    if isinstance(args,list):
-        key=":".join(args)
     return MyRedis.get(key).decode('utf-8')
   
-def rset(value, ex, *args):
+def rset(value, ex, *key):
     # 新增或修改 args key名如需传递40565:TEST:2038983919 
     # 则使用${rset(value,ex,40565,TEST,2038983919)}
     # ex 过期时间
-    args = list(map(str,args))
-    key = args
-    if isinstance(args,list):
-        key=":".join(args)
     return MyRedis.set(key, value, ex)  
     
-def rdelete(*args):
+def rdelete(*key):
     # 删除key，可传递单个或正则
     # example: 40565*
-    args = list(map(str,args))
-    key = args
-    if isinstance(args,list):
-        key=":".join(args)
     return MyRedis.delete(key)
     
 """
