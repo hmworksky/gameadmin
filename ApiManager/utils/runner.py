@@ -25,7 +25,7 @@ class MySocket:
 
         self.socket_url = socket_url
         self.ws = self.create_socket(self.socket_url)
-        print("socket_url:##########", socket_url)
+        # print("socket_url:##########", socket_url)
 
     @staticmethod
     def create_socket(socket_url):
@@ -37,12 +37,12 @@ class MySocket:
 
     def result(self, message):
         message = str(message).replace("'", '"')
-        print("进入发送命令，发送的值是", message)
+        # print("进入发送命令，发送的值是", message)
         try:
             self.ws.send(message)
-            print("发送成功，开始接受参数...")
+            # print("发送成功，开始接受参数...")
             return_data = self.ws.recv()
-            print("接收的数据为：", return_data)
+            # print("接收的数据为：", return_data)
             return json.loads(return_data)
         except WebSocketTimeoutException:
             self.ws.close()
@@ -332,7 +332,6 @@ def run_by_project(id, base_url, path):
 
 
 def run_test_by_type(id, base_url, path, type):
-    print("type:####",type)
     if type == 'project':
         run_by_project(id, base_url, path)
     elif type == 'module':
@@ -361,6 +360,6 @@ if __name__ == '__main__':
                 "teardown_hooks": []        # optional
             }
 
-    runner = MyRunner(http_client_session=p)
-    resul = runner.run_test(data)
+    runner = NewRunner(http_client_session=p)
+    resul = runner.run(data)
     print(runner.context.testcase_variables_mapping)

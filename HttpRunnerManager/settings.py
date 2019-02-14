@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 from __future__ import absolute_import, unicode_literals
 
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import djcelery
@@ -30,6 +31,8 @@ SECRET_KEY = '=w+1if4no=o&6!la#5j)3wsu%k@$)6bf+@3=i0h!5)h9h)$*s7'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
+WIN_FLAG = True if 'win' in sys.platform else False
 
 # Application definition
 
@@ -121,9 +124,9 @@ if DEBUG:
             # 'USER': 'root',  # 数据库登录名
             # 'PASSWORD': 'test1324',  # 数据库登录密码
             # 'HOST': '127.0.0.1',  # 数据库所在服务器ip地址
-            'USER': 'game_dev',
-            'PASSWORD': 'game_dev123',
-            'HOST': '21.58.201.44',
+            'USER': 'game_dev' if not WIN_FLAG else 'root',
+            'PASSWORD': 'game_dev123' if not WIN_FLAG else 'test1324',
+            'HOST': '21.58.201.44' if not WIN_FLAG else '127.0.0.1',
             'PORT': '3306',  # 监听端口 默认3306即可
         }
     }
@@ -152,7 +155,6 @@ DATABASE_APPS_MAPPING = {
 }
 
 
-
 STATIC_URL = '/static/'
 
 STATICFILES_FINDERS = (
@@ -173,13 +175,17 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_IMPORTS = ('ApiManager.tasks')
 
-CELERY_TASK_RESULT_EXPIRES = 7200  # celery任务执行结果的超时时间，
-CELERYD_CONCURRENCY = 5 if DEBUG else 10 # celery worker的并发数 也是命令行-c指定的数目 根据服务器配置实际更改 一般25即可
-CELERYD_MAX_TASKS_PER_CHILD = 500  # 每个worker执行了多少任务就会死掉，我建议数量可以大一些，比如200
+# celery任务执行结果的超时时间，
+CELERY_TASK_RESULT_EXPIRES = 7200
+# celery worker的并发数 也是命令行-c指定的数目 根据服务器配置实际更改 一般25即可
+CELERYD_CONCURRENCY = 5 if DEBUG else 10
+# 每个worker执行了多少任务就会死掉，建议数量可以大一些，比如200
+CELERYD_MAX_TASKS_PER_CHILD = 500
 
-
-EMAIL_SEND_USERNAME = '450482292@qq.com'  # 定时任务报告发送邮箱，支持163,qq,sina,企业qq邮箱等，注意需要开通smtp服务
-EMAIL_SEND_PASSWORD = 'eioakortjtehbhdi!'     # 邮箱密码
+# 定时任务报告发送邮箱，支持163,qq,sina,企业qq邮箱等，注意需要开通smtp服务
+EMAIL_SEND_USERNAME = '450482292@qq.com'
+# 邮箱密码
+EMAIL_SEND_PASSWORD = 'eioakortjtehbhdi!'
 
 
 LOGGING = {

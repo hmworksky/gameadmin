@@ -1,0 +1,20 @@
+-   config:
+        name: debug_talk2
+        request:
+            base_url: ws://tst-bubble-stg126.1768.com/primus?userId=
+        variables:
+        -   userId: '2038983921'
+-   test:
+        name: debug_talk2
+        request:
+            data:
+                cmd: getUserInfo
+                params: '{"userId":$userId}'
+            method: PRIMUS
+            url: $userId
+        validate:
+        -   check: $my_data
+            comparator: equals
+            expected: 2
+        variables:
+        -   my_data: ${count('BubbleConfig')}

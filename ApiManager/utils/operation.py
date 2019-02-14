@@ -276,8 +276,6 @@ def env_data_logic(**kwargs):
             else:
                 return '环境名称重复'
         except DataError:
-            import traceback
-            print(traceback.print_exc())
             return '环境信息过长'
         except Exception:
             logging.error('添加环境异常：{kwargs}'.format(kwargs=kwargs))
@@ -431,7 +429,6 @@ def copy_suite_data(id, name):
 
 
 def add_test_reports(runner, report_name=None):
-    print("添加报告：###")
     """
     定时任务或者异步执行报告信息落地
     :param start_at: time: 开始时间

@@ -3,7 +3,7 @@ import io
 import json
 import logging
 import os
-import platform
+from django.db.models import Count
 from json import JSONDecodeError
 
 import yaml
@@ -232,10 +232,10 @@ def case_info_logic(type=True, **kwargs):
         动态展示模块
     '''
     if 'request' not in test.keys():
-        type = test.pop('type')
-        if type == 'module':
+        _type = test.pop('type')
+        if _type == 'module':
             return load_modules(**test)
-        elif type == 'case':
+        elif _type == 'case':
             return load_cases(**test)
         else:
             return load_cases(type=2, **test)
@@ -599,27 +599,27 @@ def get_total_values():
 def update_include(include):
     for i in range(0, len(include)):
         if isinstance(include[i], dict):
-            id = include[i]['config'][0]
+            _id = include[i]['config'][0]
             source_name = include[i]['config'][1]
             try:
-                name = TestCaseInfo.objects.get(id=id).name
+                name = TestCaseInfo.objects.get(id=_id).name
             except ObjectDoesNotExist:
                 name = source_name+'_已删除!'
                 logger.warning('依赖的 {name} 用例/配置已经被删除啦！！'.format(name=source_name))
 
             include[i] = {
-                'config': [id, name]
+                'config': [_id, name]
             }
         else:
-            id = include[i][0]
+            _id = include[i][0]
             source_name = include[i][1]
             try:
-                name = TestCaseInfo.objects.get(id=id).name
+                name = TestCaseInfo.objects.get(id=_id).name
             except ObjectDoesNotExist:
                 name = source_name + ' 已删除'
                 logger.warning('依赖的 {name} 用例/配置已经被删除啦！！'.format(name=source_name))
 
-            include[i] = [id, name]
+            include[i] = [_id, name]
 
     return include
 
@@ -647,6 +647,11 @@ def timestamp_to_datetime(summary, type=True):
     return summary
 
 
+# def in_file(msg):
+#     with open('D:\\data\\python\\mylog.log', 'a+') as f:
+#         f.write(msg)
+
+
 def get_model(table=None, appname="ApiManager"):
     try:
         app_obj = __import__(appname)
@@ -657,24 +662,15 @@ def get_model(table=None, appname="ApiManager"):
         table_obj = getattr(app_model, table).objects
     return table_obj if table else app_model
 
-# class MyRedis:
-#     from redis import Redis
-#     r =
-
-
-
-
-
-
 
 class DB:
 
     def __init__(self, table, app):
-        self.model = get_model(table, app)
+        self.table = table
+        self.app = app
+        self.model = get_model(self.table, self.app)
 
     def select(self, where, values, limit=50, order_by_data=None, group_by_data=None, is_desc=True):
-        print(where)
-        print(values)
         data = self.model.filter(**where).values(*values)
         if group_by_data:
             data = data.group_by(group_by_data)
@@ -696,9 +692,12 @@ class DB:
         data = self.model.get_or_create(**values)
         return model_to_dict(data)
 
-    def count(self, where):
-        data = self.model.filter(**where).count()
-        return model_to_dict(data)
+    def counts(self, where):
+        if where:
+            data = self.model.filter(**where).count()
+        else:
+            data = self.model.count()
+        return data
 
     @classmethod
     def sql(cls, app, sql):
@@ -718,39 +717,87 @@ class DB:
                 return {}
 
 
+class MyRedis:
+    from ApiManager.utils import config
+    from redis import StrictRedis
+    rd = StrictRedis.from_url(config.TEST_REDIS)
+
+    @classmethod
+    def set(cls, key, value, exprise=7*24*3600):
+        try:
+            cls.rd.set(key, value, ex=exprise)
+        except:
+            return False
+        return True
+
+    @classmethod
+    def get(cls, key):
+        try:
+            return cls.rd.get(key)
+        except:
+            return False
+
+    @classmethod
+    def delete(cls, key):
+        if '*' in key:
+            keys = cls.rd.keys(key)
+            for i in keys:
+                cls.rd.delete(i)
+        else:
+            cls.rd.delete(key)
+
+
 def default_db(code):
 
     data = """
-from ApiManager.utils.common import DB			
+from ApiManager.utils.common import DB, MyRedis			
 def insert(table, values, app = "bubble"):
-    db = DB(table, app)
-    result = db.insert(values)
-    return result 
+    # 使用ORM更新，values(字典形式{})
+    # example: values {"item_num":9001,"item_type":2} 插入一条item_num等于9001，item_type等于2的数据
 
 def update(table, where, values, app = "bubble"):
+    # 使用ORM更新，where(字典形式{})，values（列表形式[]）
+    # example:where {"delete_flag":1} values ["id","item_num"]
     db = DB(table, app)
     result = db.update(where, values)
     return result 
 
-def count(table, where, app = "bubble"):
+def count_all(table, where=None, app = "bubble"):
+    # 使用ORM查询数量，where(字典形式{},也可不传则查询该表总数)
     db = DB(table, app)
     result = db.count(where)
     return result
 
-def select(where, values, app = "bubble", limit=50, order_by_data=None, group_by_data=None, is_desc=True):
+def select(where, values, table, app = "bubble", limit=50, order_by_data=None, group_by_data=None, is_desc=True):
+    # 使用ORM查询，where(字典形式{})，values（列表形式[]）
     db = DB(table, app)
     result = db.select(where, values, limit=50, order_by_data=None, group_by_data=None, is_desc=True)
     return result
 
 def sql(sql, app = "bubble"):
+    # 使用sql语句直接查询
     result = DB.sql(app,sql)
     return result
+    
+def rget(key):
+    # 从缓存获取数据，传递key
+    return MyRedis.get(key)
+  
+def rset(key, value, ex):
+    # 新增或修改
+    # ex 过期时间
+    return MyRedis.set(key, value, ex)  
+    
+def rdelete(key):
+    # 删除key，可传递单个或正则
+    # example: 40565*
+    return MyRedis.delete(key)
+    
 """
+
     inner = data.split("\n")[1]
     if inner not in code:
-        code = data +'\n'+ code
+        code = data + '\n' + code
     return code
-
-
 
 
