@@ -1,1 +1,3 @@
-TEST_REDIS="redis://:redis123@21.58.201.194:6379/1"
+TEST_REDIS = "redis://:redis123@21.58.201.194:6379/1"
+DEV_REDIS = "redis://:123456@21.58.201.185:6379/1"
+LOCAL_REDIS = "redis://127.0.0.1:6379/1"

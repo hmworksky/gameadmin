@@ -718,9 +718,11 @@ class DB:
 
 
 class MyRedis:
+    import sys
     from ApiManager.utils import config
     from redis import StrictRedis
-    rd = StrictRedis.from_url(config.TEST_REDIS)
+    redis_url = config.LOCAL_REDIS if 'win' in sys.platform else config.TEST_REDIS
+    rd = StrictRedis.from_url(redis_url)
 
     @classmethod
     def set(cls, key, value, exprise=7*24*3600):
@@ -757,6 +759,7 @@ def insert(table, values, app = "bubble"):
     db = DB(table, app)
     result = db.insert(values)
     return result
+    
 def update(table, where, values, app = "bubble"):
     # 使用ORM更新，where(字典形式{})，values（列表形式[]）
     # example:where {"delete_flag":1} values ["id","item_num"]
@@ -764,10 +767,10 @@ def update(table, where, values, app = "bubble"):
     result = db.update(where, values)
     return result 
 
-def count_all(table, where=None, app = "bubble"):
+def count_all(table, where=None, app = "ApiManager"):
     # 使用ORM查询数量，where(字典形式{},也可不传则查询该表总数)
     db = DB(table, app)
-    result = db.count(where)
+    result = db.counts(where)
     return result
 
 def select(where, values, table, app = "bubble", limit=50, order_by_data=None, group_by_data=None, is_desc=True):
@@ -785,10 +788,14 @@ def sql(sql, app = "bubble"):
     result = DB.sql(app,sql)
     return result
     
-def rget(key):
+def rget(*args):
     # 从缓存获取数据，传递key
     # 使用方法: ${rget(key名字)}
-    return MyRedis.get(key)
+    args = list(map(str,args))
+    key = args
+    if isinstance(args,list):
+        key=":".join(args)
+    return MyRedis.get(key).decode('utf-8')
   
 def rset(key, value, ex):
     # 新增或修改
