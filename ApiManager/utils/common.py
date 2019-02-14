@@ -797,14 +797,23 @@ def rget(*args):
         key=":".join(args)
     return MyRedis.get(key).decode('utf-8')
   
-def rset(key, value, ex):
-    # 新增或修改
+def rset(value, ex, *args):
+    # 新增或修改 args key名如需传递40565:TEST:2038983919 
+    # 则使用${rset(value,ex,40565,TEST,2038983919)}
     # ex 过期时间
+    args = list(map(str,args))
+    key = args
+    if isinstance(args,list):
+        key=":".join(args)
     return MyRedis.set(key, value, ex)  
     
-def rdelete(key):
+def rdelete(*args):
     # 删除key，可传递单个或正则
     # example: 40565*
+    args = list(map(str,args))
+    key = args
+    if isinstance(args,list):
+        key=":".join(args)
     return MyRedis.delete(key)
     
 """
