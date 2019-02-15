@@ -2,7 +2,7 @@ import json
 
 from django import template
 
-from apps.ApiManager.utils.operation import update_include
+from apps.ApiManager.utils.common import update_include
 
 register = template.Library()
 
