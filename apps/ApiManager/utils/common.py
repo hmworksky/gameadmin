@@ -4,7 +4,6 @@ import json
 import logging
 import os
 from json import JSONDecodeError
-
 import yaml
 from django.core.exceptions import ObjectDoesNotExist
 from django.forms.models import model_to_dict
@@ -655,9 +654,6 @@ def get_model(table=None, appname="ApiManager"):
     try:
         import apps
         app_obj = getattr(apps, appname)
-        logger.info("app_name:{}\n".format(appname))
-        logger.info("app_obj.dir:{}\n".format(dir(app_obj)))
-        logger.info("app_obj:{}\n".format(app_obj))
     except ImportError:
         return "不存在的app"
     else:
@@ -685,7 +681,8 @@ class DB:
             data = data[limit[0], limit[1]]
         elif isinstance(limit, int):
             data = data[0:limit]
-        return model_to_dict(data)
+        data = json.dumps(list(data))
+        return data
 
     def update(self, where, values):
         data = self.model.filter(**where).update(**values)
@@ -815,6 +812,22 @@ def rdelete(*key):
     # 删除key，可传递单个或正则
     # example: 40565*
     return MyRedis.delete(key)
+    
+def formats(data,keys):
+    # data:从数据库获取的数据
+    # keys: 如0.user_type.0 keys中有数字则代表索引
+    import json
+    logger = logging.getLogger('HttpRunnerManager')
+    data = json.loads(data)
+    keys = keys.split('.')
+    for i in keys:
+        try :
+            i = int(i)
+        except:
+            pass
+        data = data[i]
+
+    return data
     
 """
 

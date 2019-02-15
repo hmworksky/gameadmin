@@ -28,6 +28,15 @@
         .card-panel.environment th:first-child {
             width: 30%;
         }
+        .mui-ellipsis-3 {
+            display: -webkit-box;
+            overflow: hidden;
+            white-space: normal!important;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            -webkit-line-clamp: 10;
+            -webkit-box-orient: vertical;
+        }
     </style>
 </head>
 
@@ -348,11 +357,11 @@
                                                                     </div>
                                                                 {% endfor %}
                                                             {% elif key == "text" %}
-                                                                {% if  record.meta_data.response.content_type == 'image' %}
-                                                                    <img src="{{ record.meta_data.response.content }}"/>
-                                                                {% else %}
-                                                                    <pre>{{ record.meta_data.response.text }}</pre>
-                                                                {% endif %}
+{#                                                                {% if  record.meta_data.response.content_type == 'image' %}#}
+{#                                                                    <img src="{{ record.meta_data.response.content }}"/>#}
+{#                                                                {% else %}#}
+{#                                                                    <pre >{{ record.meta_data.response.text }}</pre>#}
+{#                                                                {% endif %}#}
                                                             {% else %}
                                                                 {{ value }}
                                                             {% endif %}

@@ -1,0 +1,364 @@
+2019-02-15 16:07:33,604 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-02-15 16:20:03,705 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- 测试select用例添加成功: {'test': {'request': {'url': 'http://m.1768.com', 'method': 'GET', 'data': {}}, 'name': '测试select', 'validate': [{'comparator': 'equals', 'check': '$case_result', 'expected': 2}], 'variables': [{'case_where': '{"id":5}'}, {'case_values': "['type']"}, {'case_result': '${select($case_where,$case_values,TestCaseInfo,app=ApiManager)}'}]}}
+2019-02-15 16:20:10,550 [HttpRunnerManager:658] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:20:10,554 [HttpRunnerManager:659] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:20:10,556 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:24:35,749 [HttpRunnerManager:658] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:24:35,752 [HttpRunnerManager:659] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:24:35,756 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:24:35,759 [HttpRunnerManager:688] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:29:10,023 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:29:10,026 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:29:10,030 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:29:10,033 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:31:22,181 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:31:22,183 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:31:22,185 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:31:22,190 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:31:22,192 [HttpRunnerManager:691] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 16:33:40,722 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:33:40,723 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:33:40,726 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:33:40,729 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:33:40,731 [HttpRunnerManager:691] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 16:33:40,734 [HttpRunnerManager:692] [common:select] [INFO]- ###type###data:<class 'str'>
+
+2019-02-15 16:34:38,917 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:34:38,918 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:34:38,920 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:34:38,923 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:38:45,886 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:38:45,888 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:38:45,892 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:38:45,895 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:38:45,898 [HttpRunnerManager:691] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 16:38:45,900 [HttpRunnerManager:692] [common:select] [INFO]- ###type###data:<class 'str'>
+
+2019-02-15 16:45:07,488 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 测试select用例更新成功: {'test': {'request': {'url': 'http://m.1768.com', 'method': 'GET'}, 'name': '测试select', 'validate': [{'comparator': 'equals', 'check': '$case_result.type', 'expected': 2}], 'variables': [{'case_where': '{"id":5}'}, {'case_values': "['type']"}, {'case_result': '${select($case_where,$case_values,TestCaseInfo,app=ApiManager)}'}]}}
+2019-02-15 16:45:11,126 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:45:11,128 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:45:11,131 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:51:01,952 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:51:01,955 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:51:01,958 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:51:01,961 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:51:24,180 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:51:24,182 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:51:24,186 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:51:24,191 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:51:24,193 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 16:55:31,876 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:55:31,878 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:55:31,881 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:55:31,886 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:55:31,888 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 16:55:46,079 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:55:46,080 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:55:46,085 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:55:46,094 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:55:46,098 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 16:56:32,370 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:56:32,372 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:56:32,375 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:56:32,378 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:56:32,380 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 16:59:29,986 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 16:59:29,990 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 16:59:29,994 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 16:59:29,997 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 16:59:29,998 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 16:59:30,002 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:00:44,131 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:00:44,132 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:00:44,133 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:00:44,135 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:00:44,137 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:00:44,138 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:01:15,828 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 测试select用例更新成功: {'test': {'request': {'url': 'http://m.1768.com', 'method': 'GET'}, 'name': '测试select', 'validate': [{'comparator': 'equals', 'check': '$case_result.0.type', 'expected': 2}], 'variables': [{'case_where': '{"id":5}'}, {'case_values': "['type']"}, {'case_result': '${select($case_where,$case_values,TestCaseInfo,app=ApiManager)}'}]}}
+2019-02-15 17:01:17,773 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:01:17,774 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:01:17,776 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:01:17,777 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:01:17,778 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:01:17,779 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:02:06,690 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 测试select用例更新成功: {'test': {'request': {'url': 'http://m.1768.com', 'method': 'GET'}, 'name': '测试select', 'validate': [{'comparator': 'equals', 'check': '$case_result', 'expected': 2}], 'variables': [{'case_where': '{"id":5}'}, {'case_values': "['type']"}, {'case_result': '${select($case_where,$case_values,TestCaseInfo,app=ApiManager)}.0.type'}]}}
+2019-02-15 17:02:08,827 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:02:08,828 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:02:08,829 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:02:08,833 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:02:08,833 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:02:08,834 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:03:04,533 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 测试select用例更新成功: {'test': {'request': {'url': 'http://m.1768.com', 'method': 'GET'}, 'name': '测试select', 'validate': [{'comparator': 'equals', 'check': '$case_result', 'expected': 2}], 'variables': [{'case_where': '{"id":5}'}, {'case_values': "['type']"}, {'case_result': '${select($case_where,$case_values,TestCaseInfo,app=ApiManager)}[0][type]'}]}}
+2019-02-15 17:03:07,192 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:03:07,193 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:03:07,194 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:03:07,195 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:03:07,196 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:03:07,198 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:09:55,845 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 测试select用例更新成功: {'test': {'request': {'url': 'http://m.1768.com', 'method': 'GET'}, 'name': '测试select', 'validate': [{'comparator': 'equals', 'check': '${formats($case_result,$result)}', 'expected': 2}], 'variables': [{'case_where': '{"id":5}'}, {'case_values': "['type']"}, {'case_result': '${select($case_where,$case_values,TestCaseInfo,app=ApiManager)}'}, {'result': '0.type'}]}}
+2019-02-15 17:09:58,151 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:09:58,153 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:09:58,154 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:09:58,156 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:09:58,157 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:09:58,159 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:17:34,076 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:17:34,078 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:17:34,081 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:17:34,085 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:17:34,086 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:17:34,088 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:18:58,302 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:18:58,304 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:18:58,307 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:18:58,310 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:18:58,313 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:18:58,317 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:20:05,951 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:20:05,953 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:20:05,959 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:20:05,962 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:20:05,964 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:20:05,969 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:24:02,505 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:24:02,507 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:24:02,511 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:24:02,514 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:24:02,516 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:24:02,522 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:25:28,963 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:25:28,965 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:25:28,967 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:25:28,969 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:25:28,973 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:25:28,975 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:25:42,148 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:25:42,150 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:25:42,151 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:25:42,155 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:25:42,158 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:25:42,161 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:26:13,258 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:26:13,260 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:26:13,261 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:26:13,265 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:26:13,268 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:26:13,270 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:28:11,235 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:28:11,237 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:28:11,239 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:28:11,242 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:28:11,244 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:28:11,248 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:30:14,133 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:30:14,134 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:30:14,136 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:30:14,141 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:30:14,144 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:30:14,148 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:31:15,695 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:31:15,696 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:31:15,698 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:31:15,705 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:31:15,707 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:31:15,710 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:31:58,355 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:31:58,358 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:31:58,363 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:31:58,367 [HttpRunnerManager:689] [common:select] [INFO]- ###select###data:<QuerySet [{'type': 2}]>
+
+2019-02-15 17:31:58,369 [HttpRunnerManager:690] [common:select] [INFO]- ###type###data:<class 'django.db.models.query.QuerySet'>
+
+2019-02-15 17:31:58,374 [HttpRunnerManager:692] [common:select] [INFO]- ###ser###data:[{"type": 2}]
+
+2019-02-15 17:34:28,318 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:34:28,322 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:34:28,326 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:34:28,614 [HttpRunnerManager:123] [debugtalk:formats] [INFO]- data:all:[{'type': 2}]
+2019-02-15 17:34:28,616 [HttpRunnerManager:125] [debugtalk:formats] [INFO]- data:type:<class 'list'>
+2019-02-15 17:35:16,694 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:35:16,696 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:35:16,699 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:35:17,100 [HttpRunnerManager:123] [debugtalk:formats] [INFO]- data:all:[{'type': 2}]
+2019-02-15 17:35:17,101 [HttpRunnerManager:125] [debugtalk:formats] [INFO]- data:type:<class 'list'>
+2019-02-15 17:36:10,089 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:36:10,091 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:36:10,095 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:36:10,327 [HttpRunnerManager:123] [debugtalk:formats] [INFO]- data:all:[{'type': 2}]
+2019-02-15 17:36:10,328 [HttpRunnerManager:125] [debugtalk:formats] [INFO]- data:type:<class 'list'>
+2019-02-15 17:36:10,330 [HttpRunnerManager:143] [debugtalk:formats] [INFO]- data:0:{'type': 2}
+2019-02-15 17:37:40,151 [HttpRunnerManager:659] [common:get_model] [INFO]- app_name:ApiManager
+
+2019-02-15 17:37:40,152 [HttpRunnerManager:660] [common:get_model] [INFO]- app_obj.dir:['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'admin', 'apps', 'managers', 'migrations', 'models', 'platform', 'separator', 'tasks', 'templatetags', 'utils']
+
+2019-02-15 17:37:40,154 [HttpRunnerManager:661] [common:get_model] [INFO]- app_obj:<module 'apps.ApiManager' from 'D:\\project\\HttpRunnerManager\\apps\\ApiManager\\__init__.py'>
+
+2019-02-15 17:37:40,380 [HttpRunnerManager:123] [debugtalk:formats] [INFO]- data:all:[{'type': 2}]
+2019-02-15 17:37:40,381 [HttpRunnerManager:125] [debugtalk:formats] [INFO]- data:type:<class 'list'>
+2019-02-15 17:37:40,383 [HttpRunnerManager:149] [debugtalk:formats] [INFO]- data:0:{'type': 2}
+2019-02-15 17:37:40,384 [HttpRunnerManager:149] [debugtalk:formats] [INFO]- data:type:2
