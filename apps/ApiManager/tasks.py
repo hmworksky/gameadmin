@@ -19,7 +19,6 @@ from httprunner import logger
 
 @shared_task
 def main_hrun(testset_path, report_name):
-    print("执行异步函数")
     """
     用例运行
     :param testset_path: dict or list

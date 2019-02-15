@@ -238,7 +238,6 @@ def run_test(request):
         types = kwargs.pop('type')
         run_test_by_type(id_num, base_url, testcase_dir_path, types)
         report_name = kwargs.get('report_name', None)
-        print("yibu:###")
         main_hrun.delay(testcase_dir_path, report_name)
         return HttpResponse('用例执行中，请稍后查看报告即可,默认时间戳命名报告')
     else:
@@ -247,7 +246,6 @@ def run_test(request):
         types = request.POST.get('type', 'test')
         test_info = TestCaseInfo.objects.get_case_by_id(id_num)
         request_info = eval(test_info[0].request)
-        print("request_info:###", request_info)
         method = request_info.get("test").get("request").get("method")
         session = switch_session(method, base_url)
         run_test_by_type(id_num, base_url, testcase_dir_path, types)
@@ -706,7 +704,6 @@ def debugtalk(request, id=None):
         debugtalk = request.POST.get('debugtalk')
         code = debugtalk.replace('new_line', '\r\n')
         code = default_db(code)
-        print("code:###",code)
         obj = DebugTalk.objects.get(id=id)
         obj.debugtalk = code
         obj.save()
