@@ -13,12 +13,13 @@ from __future__ import absolute_import, unicode_literals
 
 import os
 import sys
-
+from db import registar
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import djcelery
 from django.conf.global_settings import SESSION_COOKIE_AGE
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.join(BASE_DIR, 'apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -43,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ApiManager',
+    'ApiManager.apps.ApimanagerConfig',
+    'apps.bubble',
     'djcelery',
 ]
 
@@ -121,14 +123,12 @@ if DEBUG:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'HttpRunner',  # 新建数据库名
-            # 'USER': 'root',  # 数据库登录名
-            # 'PASSWORD': 'test1324',  # 数据库登录密码
-            # 'HOST': '127.0.0.1',  # 数据库所在服务器ip地址
             'USER': 'game_dev' if not WIN_FLAG else 'root',
             'PASSWORD': 'game_dev123' if not WIN_FLAG else 'test1324',
             'HOST': '21.58.201.44' if not WIN_FLAG else '127.0.0.1',
             'PORT': '3306',  # 监听端口 默认3306即可
-        }
+        },
+        'bubble': registar('bubble')
     }
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),  # 静态文件额外目录
@@ -137,21 +137,21 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'HttpRunner',  # 新建数据库名
-            # 'USER': 'root',  # 数据库登录名
-            # 'PASSWORD': 'test1324',  # 数据库登录密码
-            # 'HOST': '127.0.0.1',  # 数据库所在服务器ip地址
-            'USER': 'game_dev',
-            'PASSWORD': 'game_dev123',
-            'HOST': '21.58.201.44',
+            'NAME': 'HttpRunner',  # 数据库名
+            'USER': 'game_dev' if not WIN_FLAG else 'root',
+            'PASSWORD': 'game_dev123' if not WIN_FLAG else 'test1324',
+            'HOST': '21.58.201.44' if not WIN_FLAG else '127.0.0.1',
             'PORT': '3306',  # 监听端口 默认3306即可
-        }
+        },
+        'bubble': registar('bubble')
     }
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 DATABASE_ROUTERS = ['HttpRunnerManager.database_router.DatabaseAppsRouter']
 DATABASE_APPS_MAPPING = {
     # example:
     # 'app_name':'database_name',
+    'bubble': 'bubble'
 }
 
 
