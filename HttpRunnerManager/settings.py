@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ApiManager.apps.ApimanagerConfig',
     'apps.bubble',
+    'test_bubble',
     'djcelery',
 ]
 

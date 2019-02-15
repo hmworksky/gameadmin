@@ -831,3 +831,9 @@ def invoice(request):
         return HttpResponse("hello")
 
 
+def mods(request):
+    from ApiManager.utils.common import get_model
+    data = get_model('BubbleAccountFlowLog',appname='bubble')
+    return HttpResponse(dir(data))
+
+

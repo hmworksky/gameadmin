@@ -653,11 +653,20 @@ def timestamp_to_datetime(summary, type=True):
 
 
 def get_model(table=None, appname="ApiManager"):
+
     try:
+        import sys
+        from HttpRunnerManager.settings import BASE_DIR
+        sys.path.append(os.path.join(BASE_DIR, 'apps'))
+        logger.info("app_name:{}\n".format(appname))
         app_obj = __import__(appname)
+        logger.info("app_obj.dir:{}\n".format(dir(app_obj)))
+        logger.info("app_obj:{}\n".format(app_obj))
     except ImportError:
         return "不存在的app"
     else:
+        logger.info("table:{}\nappname:{}\n".format(table, appname))
+        logger.info(sys.path)
         app_model = app_obj.models
         table_obj = getattr(app_model, table).objects
     return table_obj if table else app_model
