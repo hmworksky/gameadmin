@@ -13,7 +13,7 @@ from __future__ import absolute_import, unicode_literals
 
 import os
 import sys
-from db import registar
+from db import registar, WIN_FLAG
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import djcelery
 from django.conf.global_settings import SESSION_COOKIE_AGE
@@ -33,7 +33,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-WIN_FLAG = True if 'win' in sys.platform else False
 
 # Application definition
 
@@ -44,9 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ApiManager.apps.ApimanagerConfig',
+    'apps.ApiManager.apps.ApimanagerConfig',
     'apps.bubble',
-    'test_bubble',
     'djcelery',
 ]
 
