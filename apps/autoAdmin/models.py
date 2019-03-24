@@ -116,4 +116,24 @@ class TestSuite(BaseTable):
     include = models.TextField(null=False)
 
 
-class Game
+class GameInfo(models.Model):
+    name = models.CharField(max_length=200, null=False)
+    game_num = models.IntegerField(help_text='gameId')
+    game_type = models.CharField(max_length=20, null=False)
+    status = models.IntegerField(help_text='游戏状态')
+    environment = models.CharField(max_length=200, null=False)
+    memo = models.CharField(max_length=2000, null=True, default='')
+
+    class Meta:
+        verbose_name = '渠道表'
+        db_table = 'game'
+
+
+class Channel(models.Model):
+    name = models.CharField(max_length=200, null=False)
+    game_num = models.IntegerField(help_text='gameId')
+    memo = models.CharField(max_length=2000, null=True, default='')
+
+    class Meta:
+        verbose_name = '渠道表'
+        db_table = 'channel'
