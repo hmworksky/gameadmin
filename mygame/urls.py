@@ -17,12 +17,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from mygame.settings import MEDIA_ROOT
 from django.views.static import serve
-from apps.autoAdmin.views import GameInfoViewSet
+from apps.autoAdmin.views import GameInfoViewSet, ProjectInfoViewSet
 from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register(r'game', GameInfoViewSet, base_name="game")
+router.register(r'project', ProjectInfoViewSet, base_name="project")
 
 urlpatterns = [
     url('^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),

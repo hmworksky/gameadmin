@@ -44,6 +44,9 @@ class ProjectInfo(BaseTable):
     test_user = models.CharField('测试人员', max_length=100, null=False)
     dev_user = models.CharField('开发人员', max_length=100, null=False)
     publish_app = models.CharField('发布应用', max_length=100, null=False)
+    status = models.IntegerField(default=0, help_text=
+                                 "项目状态：0:PRD，1:DEV，2:TEST,3:PRE,4:PUBLISHED"
+                                 )
     simple_desc = models.CharField('简要描述', max_length=100, null=True)
     other_desc = models.CharField('其他信息', max_length=100, null=True)
 
