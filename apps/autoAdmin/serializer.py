@@ -18,5 +18,3 @@ class ProjectInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProjectInfo
         fields = "__all__"
-
-

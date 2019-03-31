@@ -71,6 +71,7 @@ CORS_ALLOW_METHODS = (
     'POST',
     'PUT',
     'VIEW',
+    'DELETE'
 )
 CORS_ALLOW_HEADERS = (
     'XMLHttpRequest',

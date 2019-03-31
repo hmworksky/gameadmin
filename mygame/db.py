@@ -1,5 +1,6 @@
 import sys
 WIN_FLAG = True if 'win' in sys.platform else False
+myname = 3
 
 
 def registar(dbname):
