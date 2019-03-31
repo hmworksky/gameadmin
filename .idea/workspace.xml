@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="253e3ff0-b654-4d7b-b0ca-3a811c2bde32" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/apps/autoAdmin/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/autoAdmin/serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/autoAdmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/autoAdmin/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mygame/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/mygame/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mygame/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mygame/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/autoAdmin/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/autoAdmin/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,14 +57,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1947" />
+          <entry key="py" value="1975" />
           <entry key="txt" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="18" />
-          <entry key="Python" value="1947" />
+          <entry key="Python" value="1975" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -135,8 +132,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/autoAdmin/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+            <state relative-caret-position="407">
+              <caret line="143" column="8" selection-start-line="143" selection-start-column="8" selection-end-line="143" selection-end-column="8" />
+              <folding>
+                <marker date="1554043065072" expanded="true" signature="4791:5046" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -214,13 +214,13 @@
         <option value="$PROJECT_DIR$/apps/autoAdmin/apps.py" />
         <option value="$PROJECT_DIR$/mygame/database_router.py" />
         <option value="$PROJECT_DIR$/mygame/__init__.py" />
-        <option value="$PROJECT_DIR$/apps/autoAdmin/models.py" />
         <option value="$PROJECT_DIR$/apps/autoAdmin/filters.py" />
         <option value="$PROJECT_DIR$/mygame/urls.py" />
         <option value="$PROJECT_DIR$/mygame/settings.py" />
         <option value="$PROJECT_DIR$/mygame/db.py" />
         <option value="$PROJECT_DIR$/apps/autoAdmin/views.py" />
         <option value="$PROJECT_DIR$/apps/autoAdmin/serializer.py" />
+        <option value="$PROJECT_DIR$/apps/autoAdmin/models.py" />
       </list>
     </option>
   </component>
@@ -741,8 +741,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/autoAdmin/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+        <state relative-caret-position="407">
+          <caret line="143" column="8" selection-start-line="143" selection-start-column="8" selection-end-line="143" selection-end-column="8" />
+          <folding>
+            <marker date="1554043065072" expanded="true" signature="4791:5046" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
