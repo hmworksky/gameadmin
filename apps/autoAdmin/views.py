@@ -51,3 +51,7 @@ class TaskViewSet(viewsets.ModelViewSet):
     filter_class = TaskFilter
     ordering_fields = ("id",)
     search_fields = ("name", "task_id", "status", "user")
+
+
+class My(viewsets.ModelViewSet):
+    pass
