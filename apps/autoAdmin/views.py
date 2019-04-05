@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
-from .models import GameInfo, ProjectInfo, Task
-from .serializer import GameInfoSerializer, ProjectInfoSerializer, TaskSerializer
-from .filters import GameInfoFilter, ProjectInfoFilter, TaskFilter
+from .models import GameInfo, ProjectInfo, Task, Article, Phone
+from .serializer import GameInfoSerializer, ProjectInfoSerializer, TaskSerializer, ArticleSerializer, PhoneSerializer
+from .filters import GameInfoFilter, ProjectInfoFilter, TaskFilter, ArticleFilter, PhoneFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
 
@@ -50,9 +50,24 @@ class TaskViewSet(viewsets.ModelViewSet):
     filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
     filter_class = TaskFilter
     ordering_fields = ("id",)
-    search_fields = ("name", "task_id", "status", "user")
+    search_fields = ("name", )
 
 
-class My(viewsets.ModelViewSet):
-    """hhh1124"""
-    pass
+class ArticleViewSet(viewsets.ModelViewSet):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    pagination_class = BasePagination
+    filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
+    filter_class = ArticleFilter
+    ordering_fields = ("id",)
+    search_fields = ("title", "content")
+
+
+class PhoneViewSet(viewsets.ModelViewSet):
+    queryset = Phone.objects.all()
+    serializer_class = PhoneSerializer
+    pagination_class = BasePagination
+    filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
+    filter_class = PhoneFilter
+    ordering_fields = ("id",)
+    search_fields = ("name", "version")

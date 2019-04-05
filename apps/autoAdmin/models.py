@@ -127,11 +127,30 @@ class TestSuite(BaseTable):
 
 
 class GameInfo(BaseTable):
+    GAME_STATUS = (
+        (0, 'PROJECT'),
+        (1, 'DEV'),
+        (2, 'TEST'),
+        (3, 'PRE'),
+        (4, 'PRD'),
+    )
+    GAME_ENV = (
+        ('dev', '开发环境'),
+        ('test', '测试环境'),
+        ('prd', '生产环境')
+    )
+    GAME_TYPE = (
+        ('people', '人人游戏'),
+        ('machine', '人机游戏'),
+        ('RPG', '角色扮演'),
+        ('platform', '平台'),
+        ('hose', '房卡游戏'),
+    )
     name = models.CharField(max_length=200, null=False)
     game_num = models.IntegerField(help_text='gameId')
-    game_type = models.CharField(max_length=20, null=False)
-    status = models.IntegerField(help_text='游戏状态')
-    environment = models.CharField(max_length=200, null=False)
+    game_type = models.IntegerField(default=0, choices=GAME_TYPE, help_text="游戏类型")
+    status = models.IntegerField(default=0, choices=GAME_STATUS, help_text='游戏状态')
+    environment = models.CharField(max_length=200, null=False, choices=GAME_ENV)
     memo = models.CharField(max_length=2000, null=True, default='')
 
     class Meta:
@@ -150,9 +169,17 @@ class Channel(BaseTable):
 
 
 class Task(BaseTable):
+    STATUS_LIST = (
+        (0, "创建成功"),
+        (1, "构建中"),
+        (2, "被接收"),
+        (3, "运行中"),
+        (4, "已完成"),
+        (5, "丢弃"),
+    )
     name = models.CharField(max_length=50, null=False)
     task_id = models.CharField(max_length=50, null=False)
-    status = models.IntegerField(help_text="0:创建成功，1：构建中，2：被接收，3：运行中，4：已完成，5：丢弃")
+    status = models.IntegerField(default=0, choices=STATUS_LIST, help_text="0:创建成功，1：构建中，2：被接收，3：运行中，4：已完成，5：丢弃")
     delete_flag = models.IntegerField(default=0, help_text="0:未删除，1:已删除")
     user = models.CharField(max_length=50, help_text="发起人")
 
@@ -163,7 +190,7 @@ class Task(BaseTable):
 
 class Article(BaseTable):
     title = models.CharField(max_length=50, null=False, help_text="文章标题")
-    auth = models.ForeignKey(UserInfo, on_delete=models.CASCADE)
+    user_id = models.IntegerField(default=0, null=False, help_text="用户ID")
     content = models.TextField(max_length=5000, null=True, default='', help_text="文章内容")
     game = models.IntegerField(default=0, null=True, help_text="所属游戏ID")
     status = models.IntegerField(default=0, null=True, help_text="0:草稿,1:已发布,2:删除")
@@ -180,3 +207,55 @@ class Article(BaseTable):
     class Meta:
         verbose_name = verbose_name_plural = "文章表"
         db_table = "article"
+
+
+class Phone(models.Model):
+    PHONE_TYPE = (
+        (0, '苹果'),
+        (1, '安卓')
+    )
+    PHONE_BRAND = (
+        (0, '苹果'),
+        (1, '三星'),
+        (2, '荣耀'),
+        (3, '魅族'),
+        (4, '华为'),
+        (5, '诺基亚'),
+        (6, 'OPPO'),
+        (7, 'VIVO'),
+    )
+    NETWORK = (
+        (0, '移动'),
+        (1, '联通'),
+        (2, '电信'),
+        (3, '其它'),
+    )
+    SCREEN = (
+        (0, '4.5寸以下'),
+        (1, '4.5-5.0寸'),
+        (2, '5.0-5.5寸'),
+        (3, '5.5寸以上'),
+    )
+    USE_STATUS = (
+        (0, '未使用'),
+        (1, '使用中'),
+        (2, '借出'),
+    )
+    DAMAGED_STATUS = (
+        (0, '正常'),
+        (1, '损坏')
+    )
+    name = models.CharField(max_length=50, null=False, help_text="手机名字")
+    machine_type = models.IntegerField(default=0, choices=PHONE_TYPE, help_text="手机类型")
+    brand = models.IntegerField(default=0, choices=PHONE_BRAND, help_text="厂家")
+    version = models.CharField(max_length=50, null=False, help_text="系统版本")
+    net_type = models.IntegerField(default=0, choices=NETWORK, help_text="运营商")
+    screen_size = models.IntegerField(default=0, choices=SCREEN, help_text="屏幕大小")
+    belong_user = models.CharField(max_length=20, default='', null=True, help_text="所属人")
+    used_user = models.CharField(max_length=20, default='', null=True, help_text="使用人")
+    used_status = models.IntegerField(default=1, choices=USE_STATUS, help_text="使用状态")
+    damaged_condition = models.IntegerField(default=0, choices=DAMAGED_STATUS, help_text="损坏状态")
+
+    class Meta:
+        verbose_name = verbose_name_plural = "手机信息表"
+        db_table = "phone"
