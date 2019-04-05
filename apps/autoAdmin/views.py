@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
-from .models import GameInfo, ProjectInfo
-from .serializer import GameInfoSerializer, ProjectInfoSerializer
-from .filters import GameInfoFilter, ProjectInfoFilter
+from .models import GameInfo, ProjectInfo, Task
+from .serializer import GameInfoSerializer, ProjectInfoSerializer, TaskSerializer
+from .filters import GameInfoFilter, ProjectInfoFilter, TaskFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
 
@@ -41,3 +41,13 @@ class ProjectInfoViewSet(viewsets.ModelViewSet):
     filter_class = ProjectInfoFilter
     ordering_fields = ("id",)
     search_fields = ("project_name", )
+
+
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    pagination_class = BasePagination
+    filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
+    filter_class = TaskFilter
+    ordering_fields = ("id",)
+    search_fields = ("name", "task_id", "status", "user")

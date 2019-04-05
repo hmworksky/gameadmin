@@ -7,11 +7,6 @@ class BaseTable(models.Model):
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
 
-    class Meta:
-        abstract = True
-        verbose_name = "公共字段表"
-        db_table = 'BaseTable'
-
 
 class UserType(BaseTable):
     class Meta:
@@ -128,6 +123,7 @@ class GameInfo(models.Model):
     memo = models.CharField(max_length=2000, null=True, default='')
 
     class Meta:
+        managed = False
         verbose_name = '渠道表'
         db_table = 'game'
 
@@ -138,5 +134,41 @@ class Channel(models.Model):
     memo = models.CharField(max_length=2000, null=True, default='')
 
     class Meta:
+        managed = False
         verbose_name = '渠道表'
         db_table = 'channel'
+
+
+class Task(BaseTable):
+    name = models.CharField(max_length=50, null=False)
+    task_id = models.CharField(max_length=50, null=False)
+    status = models.IntegerField(help_text="0:创建成功，1：构建中，2：被接收，3：运行中，4：已完成，5：丢弃")
+    delete_flag = models.IntegerField(help_text="0:未删除，1:已删除")
+    user = models.CharField(max_length=50, help_text="发起人")
+
+    class Meta:
+        managed = False
+        verbose_name = verbose_name_plural = "任务表"
+        db_table = "task"
+
+
+class Article(BaseTable):
+    title = models.CharField(max_length=50, null=False, help_text="文章标题")
+    auth = models.ForeignKey(UserInfo, on_delete=models.CASCADE)
+    content = models.TextField(max_length=5000, null=True, default='', help_text="文章内容")
+    game = models.IntegerField(default=0, null=True, help_text="所属游戏ID")
+    status = models.IntegerField(default=0, null=True, help_text="0:草稿,1:已发布,2:删除")
+    article_type = models.IntegerField(
+        default=0,
+        help_text=
+        "0: 经验杂谈，"
+        "1: 项目分享，"
+        "2: 注意点相关"
+        "3: 流程相关"
+        "4: 其它"
+    )
+
+    class Meta:
+        managed = False
+        verbose_name = verbose_name_plural = "文章表"
+        db_table = "article"
