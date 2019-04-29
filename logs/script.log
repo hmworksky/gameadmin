@@ -362,3 +362,144 @@
 2019-02-15 17:37:40,381 [HttpRunnerManager:125] [debugtalk:formats] [INFO]- data:type:<class 'list'>
 2019-02-15 17:37:40,383 [HttpRunnerManager:149] [debugtalk:formats] [INFO]- data:0:{'type': 2}
 2019-02-15 17:37:40,384 [HttpRunnerManager:149] [debugtalk:formats] [INFO]- data:type:2
+2019-02-15 17:45:41,207 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 测试数据库select用例更新成功: {'test': {'variables': [{'bubble_where': '{"id":3761}'}, {'bubble_values': "['user_type']"}, {'bubble_result': '${select($bubble_where,$bubble_values,BubbleUserAccount)}'}, {'res': '0.user_type'}], 'request': {'method': 'PRIMUS', 'url': '$userid', 'data': {'params': '{"userId":$userid}', 'cmd': 'getUserInfo'}}, 'validate': [{'check': '${fomats($bubble_result,$res)}', 'comparator': 'equals', 'expected': '1'}], 'name': '测试数据库select'}}
+2019-02-15 17:47:22,280 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 测试数据库select用例更新成功: {'test': {'variables': [{'bubble_where': '{"id":3761}'}, {'bubble_values': "['user_type']"}, {'bubble_result': '${select($bubble_where,$bubble_values,BubbleUserAccount)}'}, {'res': '0.user_type'}], 'request': {'method': 'PRIMUS', 'url': '$userid', 'data': {'params': '{"userId":$userid}', 'cmd': 'getUserInfo'}}, 'validate': [{'check': '${formats($bubble_result,$res)}', 'comparator': 'equals', 'expected': '1'}], 'name': '测试数据库select'}}
+2019-02-15 17:48:00,963 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 测试数据库select用例更新成功: {'test': {'variables': [{'bubble_where': '{"id":3761}'}, {'bubble_values': "['user_type']"}, {'bubble_result': '${select($bubble_where,$bubble_values,BubbleUserAccount)}'}, {'res': '0.user_type'}], 'request': {'method': 'PRIMUS', 'url': '$userid', 'data': {'params': '{"userId":$userid}', 'cmd': 'getUserInfo'}}, 'validate': [{'check': '${formats($bubble_result,$res)}', 'comparator': 'equals', 'expected': 1}], 'name': '测试数据库select'}}
+2019-02-18 10:40:22,429 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-02-18 13:58:26,054 [HttpRunnerManager:74] [views:login] [INFO]-  登录失败, 请检查用户名或者密码
+2019-02-18 14:00:00,293 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-18 14:00:12,793 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-18 14:00:17,488 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-18 14:00:18,776 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-18 14:00:19,474 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-18 14:00:20,097 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-18 14:00:20,715 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:39:28,272 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:39:32,811 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:39:33,734 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:39:34,518 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:39:35,541 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:39:38,841 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:39:43,149 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:02,152 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:02,773 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:03,208 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:03,844 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:04,350 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:04,869 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:05,133 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:05,855 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:07,365 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:09,831 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:13,518 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:15,760 [HttpRunnerManager:74] [views:login] [INFO]- LIQINGGUO886@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-02-19 16:40:32,316 [HttpRunnerManager:74] [views:login] [INFO]- lqg 登录失败, 请检查用户名或者密码
+2019-02-19 16:41:02,544 [HttpRunnerManager:29] [operation:add_register_data] [DEBUG]- liqingguo 已被其他用户注册
+2019-02-19 16:41:18,974 [HttpRunnerManager:32] [operation:add_register_data] [DEBUG]- LIQINGGUO886@pingan.com.cn 昵称已被其他用户注册
+2019-02-19 16:41:31,614 [HttpRunnerManager:35] [operation:add_register_data] [INFO]- 新增用户：ApiManager.UserInfo.objects
+2019-02-19 16:41:47,324 [HttpRunnerManager:69] [views:login] [INFO]- lqg 登录成功
+2019-02-19 16:42:05,698 [HttpRunnerManager:69] [views:login] [INFO]- liqingguo 登录成功
+2019-02-19 16:52:07,032 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 数据库测试用例更新成功: {'test': {'variables': [{'env_info_count': '${count_all(BubbleItem,app=bubble)}'}], 'request': {'method': 'PRIMUS', 'url': '$userid', 'data': {'params': '{"userId":$userid}', 'cmd': 'getUserInfo'}}, 'validate': [{'check': '$env_info_count', 'comparator': 'equals', 'expected': 1082}], 'name': '数据库测试'}}
+2019-02-19 16:53:49,719 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 数据库测试用例更新成功: {'test': {'variables': [{'env_info_count': '${count_all(BubbleItem,app=bubble)}'}], 'request': {'method': 'PRIMUS', 'url': '$userid', 'data': {'params': '{"userId":$userid}', 'cmd': 'getUserInfo'}}, 'validate': [{'check': '$env_info_count', 'comparator': 'equals', 'expected': 38}], 'name': '数据库测试'}}
+2019-02-19 16:58:25,103 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 正常获取用户信息用例更新成功: {'test': {'request': {'method': 'PRIMUS', 'url': '$userid', 'data': {'params': '{"userId":$userid}', 'cmd': 'getUserInfo'}}, 'validate': [{'check': 'content.code', 'comparator': 'equals', 'expected': 200}], 'name': '正常获取用户信息'}}
+2019-02-20 11:34:36,870 [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-02-20 11:34:47,727 [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-02-20 17:22:56,264 [HttpRunnerManager:74] [views:login] [INFO]-  登录失败, 请检查用户名或者密码
+2019-02-20 17:23:23,172 [HttpRunnerManager:74] [views:login] [INFO]- admin 登录失败, 请检查用户名或者密码
+2019-03-01 15:32:57,718 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930 登录失败, 请检查用户名或者密码
+2019-03-01 15:33:10,584 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-03-01 15:36:30,488 [HttpRunnerManager:163] [operation:add_case_data] [INFO]- 正常获取用户信息用例更新成功: {'test': {'request': {'method': 'PRIMUS', 'url': '$userid', 'data': {'params': '{"userId":$userid}', 'cmd': 'getUserInfo'}}, 'validate': [{'check': 'content.code', 'comparator': 'equals', 'expected': 200}], 'name': '正常获取用户信息'}}
+2019-03-06 15:10:21,153 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/del/
+Traceback (most recent call last):
+  File "/home/www/.virtualenvs/admin/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/www/.virtualenvs/admin/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/www/.virtualenvs/admin/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/www/tools/HttpRunnerManager/HttpRunnerManager/activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+  File "/home/www/tools/HttpRunnerManager/apps/ApiManager/views.py", line 830
+    def del(request):
+          ^
+SyntaxError: invalid syntax
+2019-03-06 15:12:54,885 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/del/
+Traceback (most recent call last):
+  File "/home/www/.virtualenvs/admin/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/www/.virtualenvs/admin/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/www/.virtualenvs/admin/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/www/tools/HttpRunnerManager/HttpRunnerManager/activator.py", line 12, in process
+    fun = getattr(view, fun)
+AttributeError: module 'ApiManager.views' has no attribute 'del'
+2019-03-06 15:13:10,646 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/delete/
+Traceback (most recent call last):
+  File "/home/www/.virtualenvs/admin/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/www/.virtualenvs/admin/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/www/.virtualenvs/admin/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/www/tools/HttpRunnerManager/HttpRunnerManager/activator.py", line 12, in process
+    fun = getattr(view, fun)
+AttributeError: module 'ApiManager.views' has no attribute 'delete'
+2019-03-06 15:23:31,518 [HttpRunnerManager:833] [views:deletes] [INFO]- cmd结果是:<os._wrap_close object at 0x7f6aaccf2400>
+2019-03-06 15:25:34,961 [HttpRunnerManager:833] [views:deletes] [INFO]- cmd结果是:
+2019-03-06 15:26:56,730 [HttpRunnerManager:833] [views:deletes] [INFO]- cmd结果是:
+2019-03-06 15:28:15,549 [HttpRunnerManager:833] [views:deletes] [INFO]- cmd结果是:www
+
+2019-03-06 15:30:00,664 [HttpRunnerManager:833] [views:deletes] [INFO]- cmd结果是:www
+
+2019-03-06 15:30:59,911 [HttpRunnerManager:833] [views:deletes] [INFO]- cmd结果是:www
+
+2019-03-06 15:32:51,366 [HttpRunnerManager:833] [views:deletes] [INFO]- cmd结果是:
+2019-03-11 16:00:39,711 [HttpRunnerManager:74] [views:login] [INFO]- huangmin 登录失败, 请检查用户名或者密码
+2019-03-11 16:02:01,893 [HttpRunnerManager:74] [views:login] [INFO]- tuqingqing 登录失败, 请检查用户名或者密码
+2019-03-11 16:02:09,785 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-03-11 16:35:22,174 [django.request:228] [log:log_response] [WARNING]- Not Found: /bubble/
+2019-03-11 16:43:06,610 [django.request:228] [log:log_response] [WARNING]- Not Found: /bubble/
+2019-03-11 16:54:01,569 [django.request:228] [log:log_response] [WARNING]- Not Found: /bubble/
+2019-04-01 10:05:11,967 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-04-08 11:12:24,819 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930 登录失败, 请检查用户名或者密码
+2019-04-08 11:12:31,870 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-04-10 18:47:48,023 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-04-12 12:07:25,707 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930 登录失败, 请检查用户名或者密码
+2019-04-12 12:07:29,898 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-04-12 12:07:36,889 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-04-12 12:07:56,249 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-04-12 12:09:56,726 [HttpRunnerManager:74] [views:login] [INFO]- None 登录失败, 请检查用户名或者密码
+2019-04-12 12:16:31,909 [HttpRunnerManager:74] [views:login] [INFO]- huangmin 登录失败, 请检查用户名或者密码
+2019-04-12 12:17:43,932 [HttpRunnerManager:103] [views:log_out] [INFO]- huangmin退出
+2019-04-12 12:17:59,663 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-04-12 12:19:22,758 [HttpRunnerManager:74] [views:login] [INFO]- huangmin 登录失败, 请检查用户名或者密码
+2019-04-12 12:23:06,337 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-04-12 12:23:28,000 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-04-22 14:20:48,966 [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-04-22 14:53:28,096 [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-04-29 18:42:47,908 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-04-29 18:42:54,961 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930 登录失败, 请检查用户名或者密码
+2019-04-29 18:43:06,147 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-04-29 18:48:29,702 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/login/
+Traceback (most recent call last):
+  File "/home/www/.virtualenvs/admin/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/www/.virtualenvs/admin/lib/python3.5/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view HttpRunnerManager.activator.process didn't return an HttpResponse object. It returned None instead.
+2019-04-29 18:48:37,158 [HttpRunnerManager:74] [views:login] [INFO]-  登录失败, 请检查用户名或者密码
+2019-04-29 18:49:41,952 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930 登录失败, 请检查用户名或者密码
+2019-04-29 18:49:48,359 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930 登录失败, 请检查用户名或者密码
+2019-04-29 18:49:48,392 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930 登录失败, 请检查用户名或者密码
+2019-04-29 18:50:01,924 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930 登录失败, 请检查用户名或者密码
+2019-04-29 18:52:44,963 [HttpRunnerManager:103] [views:log_out] [INFO]- huangmin退出
+2019-04-29 18:53:17,089 [HttpRunnerManager:32] [operation:add_register_data] [DEBUG]- huangmin930@pingan.com.cn 昵称已被其他用户注册
+2019-04-29 18:53:37,390 [HttpRunnerManager:35] [operation:add_register_data] [INFO]- 新增用户：ApiManager.UserInfo.objects
+2019-04-29 18:53:50,460 [HttpRunnerManager:69] [views:login] [INFO]- huangmin2 登录成功
+2019-04-29 18:59:49,510 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-04-29 19:03:21,417 [HttpRunnerManager:69] [views:login] [INFO]- huangmin 登录成功
+2019-04-29 19:09:37,594 [HttpRunnerManager:103] [views:log_out] [INFO]- huangmin2退出
+2019-04-29 19:09:54,584 [HttpRunnerManager:35] [operation:add_register_data] [INFO]- 新增用户：ApiManager.UserInfo.objects
+2019-04-29 19:09:56,695 [HttpRunnerManager:74] [views:login] [INFO]- huangmin930@pingan.com.cn 登录失败, 请检查用户名或者密码
+2019-04-29 19:10:05,124 [HttpRunnerManager:69] [views:login] [INFO]- huangmin3 登录成功

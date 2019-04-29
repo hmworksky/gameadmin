@@ -827,6 +827,11 @@ def invoice(request):
     else:
         return HttpResponse("hello")
 
+def deletes(request):
+    import os
+    data = os.popen('python3 ~/tools/game_interface/script/myscript.py delete_r').read()
+    logger.info("cmd结果是:{}".format(data))
+    return HttpResponse('success')
 
 def mods(request):
     from apps.ApiManager.utils.common import get_model
