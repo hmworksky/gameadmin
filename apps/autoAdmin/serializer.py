@@ -5,7 +5,7 @@ from .models import GameInfo, Channel, ProjectInfo, Article, Task, Phone
 class GameInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = GameInfo
-        fields = "__all__"
+        fields = ['id', 'name', 'game_num', 'game_type', 'status', 'env', 'memo']
 
 
 class ChannelSerializer(serializers.ModelSerializer):

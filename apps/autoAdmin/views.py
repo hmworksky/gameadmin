@@ -22,15 +22,15 @@ class GameInfoViewSet(viewsets.ModelViewSet):
     ordering_fields = ("id", )
     search_fields = ("name", "game_type", "game_num", "status", "environment")
 
-
-class ChannelViewSet(viewsets.ModelViewSet):
-    queryset = GameInfo.objects.all()
-    serializer_class = GameInfoSerializer
-    pagination_class = BasePagination
-    filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
-    filter_class = GameInfoFilter
-    ordering_fields = ("id",)
-    search_fields = ("name", "game_type", "game_num", "status", "environment")
+#
+# class ChannelViewSet(viewsets.ModelViewSet):
+#     queryset = GameInfo.objects.all()
+#     serializer_class = GameInfoSerializer
+#     pagination_class = BasePagination
+#     filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
+#     filter_class = GameInfoFilter
+#     ordering_fields = ("id",)
+#     search_fields = ("name", "game_type", "game_num", "status", "environment")
 
 
 class ProjectInfoViewSet(viewsets.ModelViewSet):

@@ -3,13 +3,14 @@ from .models import GameInfo, Channel, ProjectInfo, Task, Article, Phone
 
 
 class GameInfoFilter(rf.FilterSet):
-    game_type = rf.CharFilter(field_name="game_type")
-    environment = rf.CharFilter(field_name="environment")
-    status = rf.NumberFilter(field_name="status")
+    game_type = rf.ChoiceFilter(choices=GameInfo.GAME_TYPE)
+    env = rf.ChoiceFilter(choices=GameInfo.GAME_ENV)
+    status = rf.ChoiceFilter(choices=GameInfo.GAME_STATUS)
+    name = rf.CharFilter(field_name="name", lookup_expr="icontains")
 
     class Meta:
         model = GameInfo
-        fields = ["game_type", "environment", "status"]
+        fields = ["game_type", "env", "status", "name"]
 
 
 class ProjectInfoFilter(rf.FilterSet):

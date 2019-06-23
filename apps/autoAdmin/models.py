@@ -128,11 +128,11 @@ class TestSuite(BaseTable):
 
 class GameInfo(BaseTable):
     GAME_STATUS = (
-        (0, 'PROJECT'),
-        (1, 'DEV'),
-        (2, 'TEST'),
-        (3, 'PRE'),
-        (4, 'PRD'),
+        (0, 'prd'),
+        (1, 'dev'),
+        (2, 'test'),
+        (3, 'pre'),
+        (4, 'published'),
     )
     GAME_ENV = (
         ('dev', '开发环境'),
@@ -140,21 +140,21 @@ class GameInfo(BaseTable):
         ('prd', '生产环境')
     )
     GAME_TYPE = (
-        ('people', '人人游戏'),
-        ('machine', '人机游戏'),
-        ('RPG', '角色扮演'),
-        ('platform', '平台'),
-        ('hose', '房卡游戏'),
+        (0, '人人游戏'),
+        (1, '人机游戏'),
+        (2, '角色扮演'),
+        (3, '平台'),
+        (4, '房卡游戏'),
     )
-    name = models.CharField(max_length=200, null=False)
-    game_num = models.IntegerField(help_text='gameId')
-    game_type = models.IntegerField(default=0, choices=GAME_TYPE, help_text="游戏类型")
-    status = models.IntegerField(default=0, choices=GAME_STATUS, help_text='游戏状态')
-    environment = models.CharField(max_length=200, null=False, choices=GAME_ENV)
-    memo = models.CharField(max_length=2000, null=True, default='')
+    name = models.CharField("游戏名称", max_length=200, null=False)
+    game_num = models.IntegerField('gameId')
+    game_type = models.IntegerField("游戏类型", default=0, choices=GAME_TYPE)
+    status = models.IntegerField('游戏状态', default=0, choices=GAME_STATUS)
+    env = models.CharField("当前环境", max_length=200, default="dev", null=False, choices=GAME_ENV)
+    memo = models.TextField("描述", max_length=2000, null=True, default='')
 
     class Meta:
-        verbose_name = '渠道表'
+        verbose_name = '游戏信息表'
         db_table = 'game'
 
 
