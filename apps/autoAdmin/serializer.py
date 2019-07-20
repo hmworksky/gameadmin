@@ -1,5 +1,11 @@
 from rest_framework import serializers
-from .models import GameInfo, Channel, ProjectInfo, Article, Task, Phone
+from .models import GameInfo, Channel, ProjectInfo, Article, Task, Phone, InterfaceInfo
+
+
+class InterfaceInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = InterfaceInfo
+        fields = "__all__"
 
 
 class GameInfoSerializer(serializers.ModelSerializer):

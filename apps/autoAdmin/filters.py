@@ -1,5 +1,16 @@
 from django_filters import rest_framework as rf
-from .models import GameInfo, Channel, ProjectInfo, Task, Article, Phone
+from .models import GameInfo, Channel, ProjectInfo, Task, Article, Phone, InterfaceInfo
+
+
+class InterfaceInfoFilter(rf.FilterSet):
+    app_name = rf.ChoiceFilter(choices=InterfaceInfo.INTERFACE_APP)
+    request_method = rf.ChoiceFilter(choices=InterfaceInfo.INTERFACE_REQUEST_METHOD)
+    request_protocol = rf.ChoiceFilter(choices=InterfaceInfo.INTERFACE_REQUEST_PROTOCOL)
+    name = rf.CharFilter(field_name="name", lookup_expr="icontains")
+
+    class Meta:
+        model = InterfaceInfo
+        fields = ["app_name", "request_method", "request_protocol", "name"]
 
 
 class GameInfoFilter(rf.FilterSet):

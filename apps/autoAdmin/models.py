@@ -11,16 +11,16 @@ class BaseTable(models.Model):
     class Meta:
         abstract = True
         verbose_name = "公共字段表"
-        db_table = 'BaseTable'
+        db_table = 'models.Model'
 
     def save(self, *args, **kwargs):
         if not self.id:
             self.create_time = timezone.now()
         self.update_time = timezone.now()
-        return super(BaseTable, self).save(*args, **kwargs)
+        return super(models.Model, self).save(*args, **kwargs)
 
 
-class UserType(BaseTable):
+class UserType(models.Model):
     class Meta:
         verbose_name = '用户类型'
         db_table = 'UserType'
@@ -29,7 +29,7 @@ class UserType(BaseTable):
     type_desc = models.CharField(max_length=50)
 
 
-class UserInfo(BaseTable):
+class UserInfo(models.Model):
     class Meta:
         verbose_name = '用户信息'
         db_table = 'UserInfo'
@@ -41,7 +41,7 @@ class UserInfo(BaseTable):
     # user_type = models.ForeignKey(UserType, on_delete=models.CASCADE)
 
 
-class ProjectInfo(BaseTable):
+class ProjectInfo(models.Model):
     class Meta:
         verbose_name = '项目信息'
         db_table = 'ProjectInfo'
@@ -58,7 +58,7 @@ class ProjectInfo(BaseTable):
     other_desc = models.CharField('其他信息', max_length=100, null=True)
 
 
-class ModuleInfo(BaseTable):
+class ModuleInfo(models.Model):
     class Meta:
         verbose_name = '模块信息'
         db_table = 'ModuleInfo'
@@ -70,7 +70,7 @@ class ModuleInfo(BaseTable):
     other_desc = models.CharField('其他信息', max_length=100, null=True)
 
 
-class TestCaseInfo(BaseTable):
+class TestCaseInfo(models.Model):
     class Meta:
         verbose_name = '用例信息'
         db_table = 'TestCaseInfo'
@@ -84,7 +84,7 @@ class TestCaseInfo(BaseTable):
     request = models.TextField('请求信息', null=False)
 
 
-class TestReports(BaseTable):
+class TestReports(models.Model):
     class Meta:
         verbose_name = "测试报告"
         db_table = 'TestReports'
@@ -97,7 +97,7 @@ class TestReports(BaseTable):
     reports = models.TextField()
 
 
-class EnvInfo(BaseTable):
+class EnvInfo(models.Model):
     class Meta:
         verbose_name = '环境管理'
         db_table = 'EnvInfo'
@@ -107,7 +107,7 @@ class EnvInfo(BaseTable):
     simple_desc = models.CharField(max_length=50, null=False)
 
 
-# class DebugTalk(BaseTable):
+# class DebugTalk(models.Model):
 #     belong_project = models.ForeignKey(ProjectInfo, on_delete=models.CASCADE)
 #     debugtalk = models.TextField(null=True, default='#debugtalk.py')
 #
@@ -116,7 +116,7 @@ class EnvInfo(BaseTable):
 #         db_table = 'DebugTalk'
 
 
-class TestSuite(BaseTable):
+class TestSuite(models.Model):
     class Meta:
         verbose_name = '用例集合'
         db_table = 'TestSuite'
@@ -126,7 +126,7 @@ class TestSuite(BaseTable):
     include = models.TextField(null=False)
 
 
-class GameInfo(BaseTable):
+class GameInfo(models.Model):
     GAME_STATUS = (
         (0, 'prd'),
         (1, 'dev'),
@@ -158,7 +158,7 @@ class GameInfo(BaseTable):
         db_table = 'game'
 
 
-class Channel(BaseTable):
+class Channel(models.Model):
     name = models.CharField(max_length=200, null=False)
     game_num = models.IntegerField(help_text='gameId')
     memo = models.CharField(max_length=2000, null=True, default='')
@@ -168,7 +168,7 @@ class Channel(BaseTable):
         db_table = 'channel'
 
 
-class Task(BaseTable):
+class Task(models.Model):
     STATUS_LIST = (
         (0, "创建成功"),
         (1, "构建中"),
@@ -188,7 +188,7 @@ class Task(BaseTable):
         db_table = "task"
 
 
-class Article(BaseTable):
+class Article(models.Model):
     title = models.CharField(max_length=50, null=False, help_text="文章标题")
     user_id = models.IntegerField(default=0, null=False, help_text="用户ID")
     content = models.TextField(max_length=5000, null=True, default='', help_text="文章内容")
@@ -196,12 +196,13 @@ class Article(BaseTable):
     status = models.IntegerField(default=0, null=True, help_text="0:草稿,1:已发布,2:删除")
     article_type = models.IntegerField(
         default=0,
-        help_text=
-        "0: 经验杂谈，"
-        "1: 项目分享，"
-        "2: 注意点相关"
-        "3: 流程相关"
-        "4: 其它"
+        help_text="""
+        0: 经验杂谈，
+        1: 项目分享，
+        2: 注意点相关
+        3: 流程相关
+        4: 其它
+        """
     )
 
     class Meta:
@@ -259,3 +260,59 @@ class Phone(models.Model):
     class Meta:
         verbose_name = verbose_name_plural = "手机信息表"
         db_table = "phone"
+
+
+class InterfaceInfo(models.Model):
+    """接口信息表"""
+
+    INTERFACE_REQUEST_PROTOCOL = (
+        (0, "http"),
+        (1, "primus"),
+        (2, "socketIO"),
+        (3, "rpc"),
+        (4, "dubbo")
+    )
+    INTERFACE_REQUEST_METHOD = (
+        (0, ""),
+        (1, "post"),
+        (2, "delete"),
+        (3, "put"),
+        (4, "patch"),
+        (5, "get"),
+    )
+    INTERFACE_APP = (
+        (0, "wap"),
+        (1, "admin"),
+        (2, "node"),
+        (3, "java")
+    )
+    name = models.CharField(max_length=50,  null=False, help_text="接口名")
+    path = models.CharField(max_length=50,  null=False, help_text="接口路径")
+    request_protocol = models.IntegerField(default=0, choices=INTERFACE_REQUEST_PROTOCOL, help_text="请求协议")
+    request_method = models.IntegerField(default=0, null=True, choices=INTERFACE_REQUEST_METHOD, help_text="请求方式")
+    route = models.CharField(default="router", max_length=50, null=True, help_text="socketIO绑定路由，一般为router")
+    project = models.ForeignKey(ProjectInfo, on_delete=models.CASCADE, help_text="项目ID")
+    app_name = models.IntegerField(default=0, choices=INTERFACE_APP, help_text="应用名")
+
+    class Meta:
+        verbose_name = verbose_name_plural = "接口信息表"
+        db_table = "interface_info"
+        unique_together = ("name", "path", "project")
+
+
+class InterfaceField(models.Model):
+    """接口字段表"""
+    INTERFACE_GENRE = (
+        (0, "string"),
+        (1, "int"),
+        (2, "float"),
+        (3, "bool"),
+        (1, "double"),
+    )
+    name = models.CharField(max_length=50, null=False, help_text="字段名")
+    genre = models.IntegerField(default=0, choices=INTERFACE_GENRE, help_text="接口类型")
+    length = models.IntegerField(default=1, help_text="字段长度")
+
+    class Meta:
+        verbose_name = verbose_name_plural = "接口字段表"
+        db_table = "interface_field"
