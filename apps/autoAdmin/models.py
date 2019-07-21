@@ -4,20 +4,20 @@ from django.utils import timezone
 # Create your models here.
 
 
-class BaseTable(models.Model):
-    create_time = models.DateTimeField('创建时间', default=timezone.now())
-    update_time = models.DateTimeField('更新时间', default=timezone.now())
-
-    class Meta:
-        abstract = True
-        verbose_name = "公共字段表"
-        db_table = 'models.Model'
-
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.create_time = timezone.now()
-        self.update_time = timezone.now()
-        return super(models.Model, self).save(*args, **kwargs)
+# class BaseTable(models.Model):
+#     create_time = models.DateTimeField('创建时间', default=timezone.now())
+#     update_time = models.DateTimeField('更新时间', default=timezone.now())
+#
+#     class Meta:
+#         abstract = True
+#         verbose_name = "公共字段表"
+#         db_table = 'models.Model'
+#
+#     def save(self, *args, **kwargs):
+#         if not self.id:
+#             self.create_time = timezone.now()
+#         self.update_time = timezone.now()
+#         return super(models.Model, self).save(*args, **kwargs)
 
 
 class UserType(models.Model):
@@ -307,12 +307,14 @@ class InterfaceField(models.Model):
         (1, "int"),
         (2, "float"),
         (3, "bool"),
-        (1, "double"),
+        (4, "double"),
     )
     name = models.CharField(max_length=50, null=False, help_text="字段名")
     genre = models.IntegerField(default=0, choices=INTERFACE_GENRE, help_text="接口类型")
     length = models.IntegerField(default=1, help_text="字段长度")
+    interface = models.ForeignKey(InterfaceInfo, on_delete=models.CASCADE, help_text="接口ID")
 
     class Meta:
         verbose_name = verbose_name_plural = "接口字段表"
         db_table = "interface_field"
+        unique_together = ("name", "interface")
