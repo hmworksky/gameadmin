@@ -39,51 +39,43 @@ class InterfaceInfoViewSet(BaseViewSet):
     search_fields = filter_class.get_fields()
 
 
-class GameInfoViewSet(viewsets.ModelViewSet):
+class GameInfoViewSet(BaseViewSet):
     queryset = am.GameInfo.objects.all()
     serializer_class = auto_serializ.GameInfoSerializer
-    pagination_class = BasePagination
-    filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
     filter_class = af.GameInfoFilter
-    ordering_fields = ("id", )
     search_fields = ("name", "game_type", "game_num", "status", "environment")
 
 
-class ProjectInfoViewSet(viewsets.ModelViewSet):
+class ProjectInfoViewSet(BaseViewSet):
     queryset = am.ProjectInfo.objects.all()
     serializer_class = auto_serializ.ProjectInfoSerializer
-    pagination_class = BasePagination
-    filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
     filter_class = af.ProjectInfoFilter
-    ordering_fields = ("id",)
     search_fields = ("project_name", )
 
 
-class TaskViewSet(viewsets.ModelViewSet):
+class TaskViewSet(BaseViewSet):
     queryset = am.Task.objects.all()
     serializer_class = auto_serializ.TaskSerializer
-    pagination_class = BasePagination
-    filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
     filter_class = af.TaskFilter
-    ordering_fields = ("id",)
     search_fields = ("name", )
 
 
-class ArticleViewSet(viewsets.ModelViewSet):
+class ArticleViewSet(BaseViewSet):
     queryset = am.Article.objects.all()
     serializer_class = auto_serializ.ArticleSerializer
-    pagination_class = BasePagination
-    filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
     filter_class = af.ArticleFilter
-    ordering_fields = ("id",)
     search_fields = ("title", "content")
 
 
-class PhoneViewSet(viewsets.ModelViewSet):
+class PhoneViewSet(BaseViewSet):
     queryset = am.Phone.objects.all()
     serializer_class = auto_serializ.PhoneSerializer
-    pagination_class = BasePagination
-    filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
     filter_class = af.PhoneFilter
-    ordering_fields = ("id",)
     search_fields = ("name", "version")
+
+
+class MockServerViewSet(BaseViewSet):
+    queryset = am.MockServer.objects.all()
+    serializer_class = auto_serializ.MockServerSerializer
+    filter_class = af.MockServerFilter
+    search_fields = ("name", "url_info")

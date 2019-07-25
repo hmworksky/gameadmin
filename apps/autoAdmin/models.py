@@ -318,3 +318,31 @@ class InterfaceField(models.Model):
         verbose_name = verbose_name_plural = "接口字段表"
         db_table = "interface_field"
         unique_together = ("name", "interface")
+
+
+class MockServer(models.Model):
+
+    INTERFACE_REQUEST_PROTOCOL = (
+        (0, "HTTP"),
+        (1, "PRIMUS"),
+        (2, "socketIO"),
+        (3, "RPC"),
+        (4, "dubbo")
+    )
+    REQUEST_TYPE = (
+        (1, "忽略原请求"),
+        (2, "返回指定值"),
+        (3, "请求JAVA返回JAVA结果"),
+        (4, "继续请求JAVA返回指定结果"),
+    )
+    name = models.CharField(max_length=50, null=False, help_text="MockServer名字")
+    url_info = models.URLField(max_length=500, null=False, help_text="接口path")
+    request_protocol = models.IntegerField(default=0, null=True, choices=INTERFACE_REQUEST_PROTOCOL, help_text="请求协议")
+    request_type = models.IntegerField(default=1, null=True, choices=REQUEST_TYPE, help_text="请求类型")
+    return_value = models.CharField(default='', null=True, max_length=2500)
+    timeout = models.IntegerField(default=0, null=False, help_text="超时时间")
+
+    class Meta:
+        verbose_name = verbose_name_plural = "mock_server"
+        db_table = "mock_server"
+        unique_together = ("name", "url_info")

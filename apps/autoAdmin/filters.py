@@ -1,26 +1,27 @@
 from django_filters import rest_framework as rf
-from .models import GameInfo, Channel, ProjectInfo, Task, Article, Phone, InterfaceInfo
+from apps.autoAdmin import models as am
+# from .models import GameInfo, Channel, ProjectInfo, Task, Article, Phone, InterfaceInfo
 
 
 class InterfaceInfoFilter(rf.FilterSet):
-    app_name = rf.ChoiceFilter(choices=InterfaceInfo.INTERFACE_APP)
-    request_method = rf.ChoiceFilter(choices=InterfaceInfo.INTERFACE_REQUEST_METHOD)
-    request_protocol = rf.ChoiceFilter(choices=InterfaceInfo.INTERFACE_REQUEST_PROTOCOL)
+    app_name = rf.ChoiceFilter(choices=am.InterfaceInfo.INTERFACE_APP)
+    request_method = rf.ChoiceFilter(choices=am.InterfaceInfo.INTERFACE_REQUEST_METHOD)
+    request_protocol = rf.ChoiceFilter(choices=am.InterfaceInfo.INTERFACE_REQUEST_PROTOCOL)
     name = rf.CharFilter(field_name="name", lookup_expr="icontains")
 
     class Meta:
-        model = InterfaceInfo
+        model = am.InterfaceInfo
         fields = ["app_name", "request_method", "request_protocol", "name"]
 
 
 class GameInfoFilter(rf.FilterSet):
-    game_type = rf.ChoiceFilter(choices=GameInfo.GAME_TYPE)
-    env = rf.ChoiceFilter(choices=GameInfo.GAME_ENV)
-    status = rf.ChoiceFilter(choices=GameInfo.GAME_STATUS)
+    game_type = rf.ChoiceFilter(choices=am.GameInfo.GAME_TYPE)
+    env = rf.ChoiceFilter(choices=am.GameInfo.GAME_ENV)
+    status = rf.ChoiceFilter(choices=am.GameInfo.GAME_STATUS)
     name = rf.CharFilter(field_name="name", lookup_expr="icontains")
 
     class Meta:
-        model = GameInfo
+        model = am.GameInfo
         fields = ["game_type", "env", "status", "name"]
 
 
@@ -30,7 +31,7 @@ class ProjectInfoFilter(rf.FilterSet):
     status = rf.NumberFilter(field_name="status")
 
     class Meta:
-        model = ProjectInfo
+        model = am.ProjectInfo
         fields = ["project_name", "responsible_name", "status"]
 
 
@@ -42,7 +43,7 @@ class TaskFilter(rf.FilterSet):
     create_time = rf.DateTimeFilter(field_name="create_time", lookup_expr="gte")
 
     class Meta:
-        model = Task
+        model = am.Task
         fields = ["name", "task_id", "status", "user", "create_time"]
 
 
@@ -56,22 +57,35 @@ class ArticleFilter(rf.FilterSet):
     create_time = rf.DateTimeFilter(field_name="create_time", lookup_expr="gte")
 
     class Meta:
-        model = Article
+        model = am.Article
         fields = ["title", "user_id", "status", "game", "article_type", "content", "create_time"]
 
 
 class PhoneFilter(rf.FilterSet):
     name = rf.CharFilter(field_name="name", lookup_expr="icontains")
-    machine_type = rf.ChoiceFilter(choices=Phone.PHONE_TYPE)
-    brand = rf.ChoiceFilter(choices=Phone.PHONE_BRAND)
+    machine_type = rf.ChoiceFilter(choices=am.Phone.PHONE_TYPE)
+    brand = rf.ChoiceFilter(choices=am.Phone.PHONE_BRAND)
     version = rf.CharFilter(field_name="version", lookup_expr="icontains")
-    net_type = rf.ChoiceFilter(choices=Phone.NETWORK)
-    screen_size = rf.ChoiceFilter(choices=Phone.SCREEN)
+    net_type = rf.ChoiceFilter(choices=am.Phone.NETWORK)
+    screen_size = rf.ChoiceFilter(choices=am.Phone.SCREEN)
     belong_user = rf.CharFilter(field_name="belong_user", lookup_expr="icontains")
     used_user = rf.CharFilter(field_name="used_user", lookup_expr="icontains")
-    used_status = rf.ChoiceFilter(choices=Phone.USE_STATUS)
-    damaged_condition = rf.ChoiceFilter(choices=Phone.DAMAGED_STATUS)
+    used_status = rf.ChoiceFilter(choices=am.Phone.USE_STATUS)
+    damaged_condition = rf.ChoiceFilter(choices=am.Phone.DAMAGED_STATUS)
 
     class Meta:
-        model = Phone
+        model = am.Phone
         fields = ["machine_type", "brand", "version", "net_type", "screen_size", "belong_user", "used_status", "damaged_condition"]
+
+
+class MockServerFilter(rf.FilterSet):
+    name = rf.CharFilter(field_name="name", lookup_expr="icontains")
+    url_info = rf.CharFilter(field_name="url_info", lookup_expr="icontains")
+    request_protocol = rf.ChoiceFilter(choices=am.MockServer.INTERFACE_REQUEST_PROTOCOL)
+    request_type = rf.ChoiceFilter(choices=am.MockServer.REQUEST_TYPE)
+    timeout = rf.NumberFilter(field_name="timeout", lookup_expr="gte")
+
+    class Meta:
+        model = am.MockServer
+        fields = ["name", "url_info", "request_protocol", "request_type", "timeout", "return_value"]
+

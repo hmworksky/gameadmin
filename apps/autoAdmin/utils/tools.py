@@ -1,3 +1,6 @@
+import requests
+
+
 class Tool:
 
     @classmethod
@@ -7,3 +10,11 @@ class Tool:
         for value in data:
             temp.update(value)
         return temp
+
+    @classmethod
+    def request_(cls, _request, url, data=None):
+        if _request == requests.post:
+            res = _request.post(url, data=data).content
+        else:
+            res = _request.get(url, params=data).content
+        return res
