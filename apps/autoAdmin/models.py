@@ -339,7 +339,7 @@ class MockServer(models.Model):
     url_info = models.URLField(max_length=500, null=False, help_text="接口path")
     request_protocol = models.IntegerField(default=0, null=True, choices=INTERFACE_REQUEST_PROTOCOL, help_text="请求协议")
     request_type = models.IntegerField(default=1, null=True, choices=REQUEST_TYPE, help_text="请求类型")
-    return_value = models.CharField(default='', null=True, max_length=2500)
+    return_value = models.TextField(default='', null=True, max_length=1000)
     timeout = models.IntegerField(default=0, null=False, help_text="超时时间")
 
     class Meta:
