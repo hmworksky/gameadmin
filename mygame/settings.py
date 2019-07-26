@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import sys
+# import dwebsocket
 from mygame.db import registar, auto
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -56,6 +57,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+MIDDLEWARE_CLASSES = [
+    'dwebsocket.middleware.WebSocketMiddleware'
+]
+
+# 可以允许每一个单独的视图实用websockets
+WEBSOCKET_ACCEPT_ALL=True
 
 # 跨域增加忽略
 CORS_ALLOW_CREDENTIALS = True

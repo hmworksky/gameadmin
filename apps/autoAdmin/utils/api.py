@@ -105,7 +105,7 @@ class GenerateAutoCase:
 
 if __name__ == '__main__':
     from pprint import pprint
-    g = GenerateAutoCase(2)
+    g = GenerateAutoCase(1)
     field = g.interface_detail.get_all_field()
     res = g.generate_all_field()
     pprint(res)

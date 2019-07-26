@@ -12,5 +12,9 @@ auto_router.register(r'mock', views.MockServerViewSet, base_name="mockServerInfo
 
 
 auto_urls = [
-    url(r'^', other_view.mock_server)
+    url(r'^', other_view.mock_server),
+]
+
+sock_urls = [
+    url(r'^', other_view.primus_view)
 ]
